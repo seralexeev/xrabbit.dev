@@ -1,0 +1,190 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>🐰 Robot Rabbit</title>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+                    rel="stylesheet"
+                />
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"
+                />
+
+                <style>
+                    :root {
+                        --color-black: #000;
+                        --color-white: #fff;
+                        --color-gray: #aaa;
+                        --color-blue: #007aff;
+                        --color-green: #41ff00;
+                    }
+
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+
+                    html,
+                    body,
+                    div,
+                    span,
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    p,
+                    pre,
+                    code {
+                        margin: 0;
+                        padding: 0;
+                        border: 0;
+                        font-size: 100%;
+                        font: inherit;
+                        vertical-align: baseline;
+                    }
+
+                    body {
+                        font-family: 'Fira Code', monospace;
+                        font-size: 16px;
+                        line-height: 1.4;
+                        color: var(--color-black);
+                        background: var(--color-white);
+                        padding: 20px;
+                    }
+
+                    .container {
+                        max-width: 720px;
+                        margin: 0 auto;
+                    }
+
+                    header {
+                        margin-bottom: 20px;
+                    }
+
+                    h1 {
+                        font-size: 24px;
+                        font-weight: normal;
+                        color: var(--color-black);
+                    }
+
+                    header img {
+                        height: 36px;
+                        vertical-align: middle;
+                    }
+
+                    .post-list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+
+                    .post {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    }
+
+                    .post-header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 8px;
+                    }
+
+                    .post-meta {
+                        color: var(--color-gray);
+                    }
+
+                    .post-media {
+                        display: flex;
+                        gap: 8px;
+                    }
+
+                    .media-item {
+                        text-decoration: none;
+                        border: none;
+                        outline: 1px solid var(--color-gray);
+                        width: 32px;
+                        height: 32px;
+                    }
+
+                    .media-item img {
+                        width: 32px;
+                        height: 32px;
+                        object-fit: contain;
+                        cursor: pointer;
+                    }
+
+                    a {
+                        color: var(--color-blue);
+                        text-decoration: underline;
+                        text-underline-offset: 0.2rem;
+                    }
+
+                    u {
+                        text-decoration: none;
+                        border-bottom: 1px solid var(--color-black);
+                    }
+
+                    code {
+                        background: var(--color-black);
+                        color: var(--color-green);
+                        padding: 0 2px;
+                        font-family: inherit;
+                    }
+
+                    pre {
+                        background: var(--color-black);
+                        color: var(--color-green);
+                        padding: 8px;
+                        margin: 8px 0;
+                        overflow-x: auto;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <header>
+                        <img src="./media/logo.gif" />
+                        <h1>Robot Rabbit</h1>
+                    </header>
+
+                    <div class="post-list">
+        <div class="post" id="1">
+            <div class="post-header">
+                <a href="#1">#1</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>I decided to remember a bit how to handle a soldering iron and combine it with the knowledge I gained working as a fullstack. I want to build an internet-controlled machine with <a href="https://en.wikipedia.org/wiki/Ackermann_steering_geometry">Ackerman</a> steering. The second step is to dive deeper into <a href="https://github.com/ros2/ros2">ros2</a> and autonomous navigation.</p>
+</div>
+            
+        </div>
+    
+        <div class="post" id="2">
+            <div class="post-header">
+                <a href="#2">#2</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>Ordered some basic components and tools for assembly from aliexpress and amazon.</p>
+</div>
+            
+        </div>
+    </div>
+                </div>
+
+                <script type="module">
+                    import 'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js';
+                    GLightbox();
+                </script>
+            </body>
+        </html>
+    

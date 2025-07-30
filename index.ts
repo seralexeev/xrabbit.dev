@@ -334,9 +334,12 @@ if (require.main === module) {
             });
         }
 
-        const items = Array.from(en_posts.values()).sort((a, b) => a.meta.id - b.meta.id);
+        const items = Array.from(en_posts.values());
 
-        await dump_posts(path.join(__dirname, 'README.md'), items);
-        await render_html(items);
+        await dump_posts(
+            path.join(__dirname, 'README.md'),
+            items.sort((a, b) => a.meta.id - b.meta.id),
+        );
+        await render_html(items.sort((a, b) => b.meta.id - a.meta.id));
     })();
 }

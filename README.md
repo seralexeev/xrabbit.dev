@@ -10,6 +10,8 @@ I decided to remember a bit how to handle a soldering iron and combine it with t
 ```yaml
 id: 2
 date: 18-05-2025
+media:
+  - media/photo_5283208605199362803_y.jpg
 ```
 
 Ordered some basic components and tools for assembly from aliexpress and amazon.

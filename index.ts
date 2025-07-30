@@ -255,7 +255,7 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                     .media-item {
                         text-decoration: none;
                         border: none;
-                        outline: 1px solid var(--color-gray);
+                        background: var(--color-black);
                         width: 32px;
                         height: 32px;
                     }

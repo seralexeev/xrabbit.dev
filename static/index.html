@@ -113,13 +113,14 @@
                         text-decoration: none;
                         border: none;
                         background: var(--color-black);
-                        width: 32px;
-                        height: 32px;
+                        width: 128px;
+                        height: 128px;
                     }
 
-                    .media-item img {
-                        width: 32px;
-                        height: 32px;
+                    .media-item img,
+                    .media-item video {
+                        width: 128px;
+                        height: 128px;
                         object-fit: contain;
                         cursor: pointer;
                     }
@@ -159,6 +160,64 @@
                     </header>
 
                     <div class="post-list">
+        <div class="post" id="7">
+            <div class="post-header">
+                <a href="#7">#7</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>Finally launched the motors via UART</p>
+</div>
+            
+            <div class="post-media">
+                
+        <a class="media-item glightbox" href="media/7-1.mp4">
+            <video src="media/7-1.mp4" />
+        </a>
+    
+            </div>
+        
+        </div>
+    
+        <div class="post" id="6">
+            <div class="post-header">
+                <a href="#6">#6</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>Roboclaw does not stop if the script crashes. You need to enable rc timeout and send commands in a loop</p>
+</div>
+            
+        </div>
+    
+        <div class="post" id="5">
+            <div class="post-header">
+                <a href="#5">#5</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>Found out that there are 2 ways to read dualsense from the browser. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API">Gamepad API</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API">WebHID API</a>.</p>
+</div>
+            
+        </div>
+    
+        <div class="post" id="4">
+            <div class="post-header">
+                <a href="#4">#4</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>As it turned out rpi has only one pwm output which is ok for testing but I still ordered <a href="https://www.adafruit.com/product/815">PCA9685</a> just in case I add another servo.</p>
+</div>
+            
+        </div>
+    
+        <div class="post" id="3">
+            <div class="post-header">
+                <a href="#3">#3</a>
+                <div class="post-meta">18-05-2025</div>
+            </div>
+            <div class="post-body"><p>I planned to start the steering servo today and try to turn it through the rpi but Amazon didn’t deliver the solder and I’ll have to wait with the soldering.</p>
+</div>
+            
+        </div>
+    
         <div class="post" id="2">
             <div class="post-header">
                 <a href="#2">#2</a>
@@ -166,11 +225,15 @@
             </div>
             <div class="post-body"><p>Ordered some basic components and tools for assembly from aliexpress and amazon.</p>
 </div>
+            
             <div class="post-media">
+                
         <a class="media-item glightbox" href="media/1-1.jpg">
             <img src="media/1-1.jpg" />
         </a>
-    </div>
+    
+            </div>
+        
         </div>
     
         <div class="post" id="1">

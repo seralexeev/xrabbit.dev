@@ -4,8 +4,6 @@ import { marked } from 'marked';
 import * as path from 'path';
 import { z } from 'zod';
 
-const OPENAI_API_KEY = `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`;
-
 type PostMeta = z.infer<typeof PostMeta>;
 const PostMeta = z.object({
     id: z.number(),
@@ -21,13 +19,25 @@ const Image = ({ src }: { src: string }) => {
     `;
 };
 
+const Video = ({ src }: { src: string }) => {
+    return html`
+        <a class="media-item glightbox" href="${src}">
+            <video src="${src}" />
+        </a>
+    `;
+};
+
 const Post = ({ meta, content }: { meta: PostMeta; content: string }) => {
     const media = () => {
         if (meta.media == null || meta.media.length === 0) {
             return null;
         }
 
-        return html`<div class="post-media">${meta.media.map((x) => Image({ src: x }))}</div>`;
+        return html`
+            <div class="post-media">
+                ${meta.media.map((x) => (x.endsWith('.mp4') ? Video({ src: x }) : Image({ src: x })))}
+            </div>
+        `;
     };
 
     return html`
@@ -47,9 +57,13 @@ const html = (strings: TemplateStringsArray, ...values: Array<string | null | nu
 };
 
 const translate = async (content: string) => {
+    const api_key = z.string().parse(process.env.OPENAI_API_KEY);
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
-        headers: { Authorization: `Bearer ${OPENAI_API_KEY}`, 'Content-Type': 'application/json' },
+        headers: {
+            Authorization: `Bearer ${api_key}`,
+            'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
             model: 'gpt-4.1',
             messages: [
@@ -256,13 +270,14 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                         text-decoration: none;
                         border: none;
                         background: var(--color-black);
-                        width: 32px;
-                        height: 32px;
+                        width: 128px;
+                        height: 128px;
                     }
 
-                    .media-item img {
-                        width: 32px;
-                        height: 32px;
+                    .media-item img,
+                    .media-item video {
+                        width: 128px;
+                        height: 128px;
                         object-fit: contain;
                         cursor: pointer;
                     }

@@ -32,7 +32,7 @@ id: 4
 date: 18-05-2025
 ```
 
-Как оказалось у rpi всего один pwm выход что ок для тестов но я все таки заказал PCA9685 чтобы уж наверняка на случай если еще добавлю серво.
+Как оказалось у rpi всего один pwm выход что ок для тестов но я все таки заказал [PCA9685](https://www.adafruit.com/product/815) чтобы уж наверняка на случай если еще добавлю серво.
 
 ---
 
@@ -41,13 +41,24 @@ id: 5
 date: 18-05-2025
 ```
 
-Узнал что есть 2 способа читать dualsense из браузера. Gamepad api и hid api.
+Узнал что есть 2 способа читать dualsense из браузера. [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) и [WebHID API](https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API).
 
 ---
 
 ```yaml
-id: 5
+id: 6
 date: 18-05-2025
 ```
 
 Roboclaw не останавливается если скрипт крашнулся. Надо включать rc timeout и слать команды в цикле
+
+---
+
+```yaml
+id: 7
+date: 18-05-2025
+media:
+    - media/7-1.mp4
+```
+
+Запустил таки двигатели через UART

@@ -331,30 +331,28 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
     await fs.writeFile(output_path, result, 'utf-8');
 };
 
-if (require.main === module) {
-    (async () => {
-        const ru_posts = await read_markdown_file(path.join(__dirname, 'README.ru.md'));
-        const en_posts = await read_markdown_file(path.join(__dirname, 'README.md'));
+(async () => {
+    const ru_posts = await read_markdown_file(path.join(__dirname, 'README.ru.md'));
+    const en_posts = await read_markdown_file(path.join(__dirname, 'README.md'));
 
-        for (const [id, post] of ru_posts) {
-            if (en_posts.has(id)) {
-                console.log(`⚪ ${id} - already exists in English`);
-                continue;
-            }
-
-            console.log(`🟢 ${id} - translating to English`);
-            en_posts.set(id, {
-                meta: post.meta,
-                content: await translate(post.content),
-            });
+    for (const [id, post] of ru_posts) {
+        if (en_posts.has(id)) {
+            console.log(`⚪ ${id} - already exists in English`);
+            continue;
         }
 
-        const items = Array.from(en_posts.values());
+        console.log(`🟢 ${id} - translating to English`);
+        en_posts.set(id, {
+            meta: post.meta,
+            content: await translate(post.content),
+        });
+    }
 
-        await dump_posts(
-            path.join(__dirname, 'README.md'),
-            items.sort((a, b) => a.meta.id - b.meta.id),
-        );
-        await render_html(items.sort((a, b) => b.meta.id - a.meta.id));
-    })();
-}
+    const items = Array.from(en_posts.values());
+
+    await dump_posts(
+        path.join(__dirname, 'README.md'),
+        items.sort((a, b) => a.meta.id - b.meta.id),
+    );
+    await render_html(items.sort((a, b) => b.meta.id - a.meta.id));
+})();

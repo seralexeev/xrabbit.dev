@@ -62,3 +62,41 @@ media:
 ```
 
 Finally launched the motors via UART
+
+---
+
+```yaml
+id: 8
+date: 18-05-2025
+```
+
+The problem was that I foolishly bought a TXB0104 thought this level shifter would work with UART and allow me to connect RX roboclaw which works on 5V logic but it didn't work. I disconnected it and left only TX 3.3V from the RPI.
+
+---
+
+```yaml
+id: 9
+date: 18-05-2025
+```
+
+In the end I'll order a TXS0108E or quickly make a voltage divider but I need to go to jaycar for resistors.
+
+---
+
+```yaml
+id: 10
+date: 22-05-2025
+```
+
+For now of course everything is held together with makeshift connections, I probably need to solder it all onto a PCB with proper traces instead of wires
+
+---
+
+```yaml
+id: 11
+date: 22-05-2025
+media:
+  - media/11-1.mp4
+```
+
+The servo also works but I am waiting for a quieter and more precise brushless one from Aliexpress. When it arrives I will replace it.

@@ -1,5 +1,6 @@
 {
     "name": "rabbit-blog",
+    "type": "module",
     "scripts": {
         "build": "node index.ts"
     },

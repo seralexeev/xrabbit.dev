@@ -15,7 +15,7 @@ const PostMeta = z.object({
 
 const Image = ({ src }: { src: string }) => {
     return html`
-        <a class="media-item glightbox" href="${src}">
+        <a class="media-item" href="${src}" target="_blank" rel="noopener noreferrer">
             <img src="${src}" />
         </a>
     `;
@@ -23,8 +23,9 @@ const Image = ({ src }: { src: string }) => {
 
 const Video = ({ src }: { src: string }) => {
     return html`
-        <a class="media-item glightbox" href="${src}">
-            <video src="${src}" />
+        <a class="media-item" href="${src}" target="_blank" rel="noopener noreferrer">
+            <div>Click to Play</div>
+            <video src="${src}" preload="none"></video>
         </a>
     `;
 };
@@ -179,10 +180,6 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                     href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
                     rel="stylesheet"
                 />
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css"
-                />
 
                 <style>
                     :root {
@@ -241,7 +238,6 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                     h1 {
                         font-size: 24px;
                         font-weight: normal;
-                        color: var(--color-black);
                     }
 
                     header img {
@@ -281,15 +277,16 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                         text-decoration: none;
                         border: none;
                         background: var(--color-black);
-                        width: 128px;
-                        height: 128px;
+                        width: 100%;
+                        height: 256px;
+                        overflow: hidden;
                     }
 
                     .media-item img,
                     .media-item video {
-                        width: 128px;
-                        height: 128px;
-                        object-fit: contain;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                         cursor: pointer;
                     }
 
@@ -302,6 +299,10 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                     u {
                         text-decoration: none;
                         border-bottom: 1px solid var(--color-black);
+                    }
+
+                    p {
+                        margin-bottom: 16px;
                     }
 
                     code {
@@ -318,6 +319,18 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                         margin: 8px 0;
                         overflow-x: auto;
                     }
+
+                    .divider {
+                        text-align: center;
+                        color: var(--color-gray);
+                        font-size: 14px;
+                    }
+
+                    .translated {
+                        color: var(--color-gray);
+                        font-style: italic;
+                        font-size: 12px;
+                    }
                 </style>
             </head>
             <body>
@@ -325,15 +338,11 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
                     <header>
                         <img src="./media/logo.gif" />
                         <h1>Robot Rabbit</h1>
+                        <span class="translated">(translated from Russian via ChatGPT)</span>
                     </header>
 
-                    <div class="post-list">${rendered_posts.join('')}</div>
+                    <div class="post-list">${rendered_posts.join(html`<div class="divider">---</div>`)}</div>
                 </div>
-
-                <script type="module">
-                    import 'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js';
-                    GLightbox();
-                </script>
             </body>
         </html>
     `;

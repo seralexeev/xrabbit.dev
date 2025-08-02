@@ -1,8 +1,10 @@
-import * as fs from 'fs/promises';
 import * as yaml from 'js-yaml';
 import { marked } from 'marked';
+import * as fs from 'node:fs/promises';
 import * as path from 'path';
 import { z } from 'zod';
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 type PostMeta = z.infer<typeof PostMeta>;
 const PostMeta = z.object({
@@ -57,7 +59,7 @@ const html = (strings: TemplateStringsArray, ...values: Array<string | null | nu
 };
 
 const translate = async (content: string) => {
-    const api_key = z.string().parse(process.env.OPENAI_API_KEY);
+    const api_key = z.string().parse(process.env['OPENAI_API_KEY']);
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -103,7 +105,12 @@ const translate = async (content: string) => {
     });
 
     const data = await response.json();
-    return Reply.parse(data).choices[0].message.content;
+    const llm_response = Reply.parse(data).choices[0]?.message.content;
+    if (llm_response == null) {
+        throw new Error('Translation content is null');
+    }
+
+    return llm_response;
 };
 
 const read_markdown_file = async (file_path: string) => {
@@ -125,6 +132,10 @@ const read_markdown_file = async (file_path: string) => {
         }
 
         const yaml_content = yaml_match[1];
+        if (yaml_content == null) {
+            throw new Error('YAML content not found');
+        }
+
         const content = section.slice(yaml_match[0].length).trim();
         const raw_meta = yaml.load(yaml_content);
         const meta = PostMeta.parse(raw_meta);

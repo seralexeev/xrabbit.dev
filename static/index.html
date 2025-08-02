@@ -160,6 +160,66 @@
                     </header>
 
                     <div class="post-list">
+        <div class="post" id="15">
+            <div class="post-header">
+                <a href="#15">#15</a>
+                <div class="post-meta">25-05-2025</div>
+            </div>
+            <div class="post-body"><p>A bit more on this later but it turned out I forgot to increase the current limit on the power supply when I tested starting the robot for the first time. As a result during joystick testing when I sharply pressed the trigger the current spiked and the rpi shut down. After spending some time with the logs I found:</p>
+<pre><code>May 25 01:36:39 rabbit kernel: hwmon hwmon2: Undervoltage detected!
+May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
+</code></pre>
+<p>which points to the problem. I&#39;ll try to raise the maximum to 3 - 4 A and see how things go.</p>
+</div>
+            
+            <div class="post-media">
+                
+        <a class="media-item glightbox" href="media/15-1.mp4">
+            <video src="media/15-1.mp4" />
+        </a>
+    
+            </div>
+        
+        </div>
+    
+        <div class="post" id="14">
+            <div class="post-header">
+                <a href="#14">#14</a>
+                <div class="post-meta">24-05-2025</div>
+            </div>
+            <div class="post-body"><p>Today there is pretty good progress. I bought 3 prototype boards and connected them together.</p>
+</div>
+            
+            <div class="post-media">
+                
+        <a class="media-item glightbox" href="media/14-1.jpg">
+            <img src="media/14-1.jpg" />
+        </a>
+    
+            </div>
+        
+        </div>
+    
+        <div class="post" id="13">
+            <div class="post-header">
+                <a href="#13">#13</a>
+                <div class="post-meta">24-05-2025</div>
+            </div>
+            <div class="post-body"><p>For now I am thinking of using a prototype board and assembling everything on it. At least the layout will be clear and it will be a bit easier to lay everything out later.</p>
+</div>
+            
+        </div>
+    
+        <div class="post" id="12">
+            <div class="post-header">
+                <a href="#12">#12</a>
+                <div class="post-meta">24-05-2025</div>
+            </div>
+            <div class="post-body"><p>Started thinking about a custom PCB and getting out the laser iron. Sat with KiCad and realized it&#39;s too early. There are still too many details I don&#39;t understand yet. I&#39;ll put it off until PCBs for MCUs appear or until I&#39;m completely ready.</p>
+</div>
+            
+        </div>
+    
         <div class="post" id="11">
             <div class="post-header">
                 <a href="#11">#11</a>

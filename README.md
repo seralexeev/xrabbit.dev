@@ -100,3 +100,50 @@ media:
 ```
 
 The servo also works but I am waiting for a quieter and more precise brushless one from Aliexpress. When it arrives I will replace it.
+
+---
+
+```yaml
+id: 12
+date: 24-05-2025
+```
+
+Started thinking about a custom PCB and getting out the laser iron. Sat with KiCad and realized it's too early. There are still too many details I don't understand yet. I'll put it off until PCBs for MCUs appear or until I'm completely ready.
+
+---
+
+```yaml
+id: 13
+date: 24-05-2025
+```
+
+For now I am thinking of using a prototype board and assembling everything on it. At least the layout will be clear and it will be a bit easier to lay everything out later.
+
+---
+
+```yaml
+id: 14
+date: 24-05-2025
+media:
+  - media/14-1.jpg
+```
+
+Today there is pretty good progress. I bought 3 prototype boards and connected them together.
+
+---
+
+```yaml
+id: 15
+date: 25-05-2025
+media:
+  - media/15-1.mp4
+```
+
+A bit more on this later but it turned out I forgot to increase the current limit on the power supply when I tested starting the robot for the first time. As a result during joystick testing when I sharply pressed the trigger the current spiked and the rpi shut down. After spending some time with the logs I found:
+
+```
+May 25 01:36:39 rabbit kernel: hwmon hwmon2: Undervoltage detected!
+May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
+```
+
+which points to the problem. I'll try to raise the maximum to 3 - 4 A and see how things go.

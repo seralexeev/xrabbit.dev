@@ -1,17 +1,17 @@
 {
     "name": "rabbit-blog",
+    "type": "module",
     "scripts": {
-        "build": "npx ts-node index.ts"
+        "build": "node index.ts"
     },
     "devDependencies": {
         "@types/node": "24.1.0",
-        "typescript": "5.8.3",
-        "@types/js-yaml": "4.0.9",
-        "@types/marked": "6.0.0"
+        "typescript": "5.9.2",
+        "@types/js-yaml": "4.0.9"
     },
     "dependencies": {
         "js-yaml": "4.1.0",
         "marked": "16.1.1",
-        "zod": "4.0.11"
+        "zod": "4.0.14"
     }
 }

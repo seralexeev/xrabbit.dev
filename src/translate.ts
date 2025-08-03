@@ -18,11 +18,14 @@ export const translate = async (content: string) => {
                         - You are a professional translator specialized in translating technical blog posts.
                         - Translate the following text from Russian to English, preserving the original formatting and code blocks. Do not translate any code or URLs. The text is a blog post about a robot rabbit project.
                         - Keep the original structure, including headings, paragraphs, and code blocks.
-                        - Keep the original style and tone of the text.
+                        - Maintain the author's casual, conversational tone and personal style. The author writes in a direct, straightforward manner with occasional technical humor and personal reflections.
+                        - Use simple, natural English - avoid overly formal or complex vocabulary. The author is technical but writes casually, like explaining to a friend.
+                        - Keep the author's informal style including contractions, casual transitions, and personal commentary.
+                        - Preserve the author's tendency to make brief, matter-of-fact statements and occasional side comments.
                         - Do not add any additional explanations or comments. Just provide the translated text.
                         - The text is in Markdown format, so preserve the Markdown syntax.
-                        - Do not use rare or complex words, the author is not a native English speaker unless it's a technical term.
-                        - Do not use oxford commas and do not use commas before "and", "or", "but", etc. 
+                        - Use simple vocabulary - the author is not a native English speaker and prefers direct, clear communication.
+                        - Do not use oxford commas and avoid unnecessary commas before "and", "or", "but", etc. 
 
                         Translate the following text:
 

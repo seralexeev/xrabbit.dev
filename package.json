@@ -2,7 +2,7 @@
     "name": "rabbit-blog",
     "type": "module",
     "scripts": {
-        "build": "node index.ts"
+        "build": "node src/index.ts"
     },
     "devDependencies": {
         "@types/node": "24.1.0",

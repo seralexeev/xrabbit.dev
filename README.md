@@ -125,7 +125,7 @@ For now I am thinking of using a prototype board and assembling everything on it
 id: 14
 date: 24-05-2025
 media:
-  - media/14-1.jpeg
+  - media/14-1.jpg
 ```
 
 Today there is pretty good progress. I bought 3 prototype boards and connected them together.
@@ -154,9 +154,9 @@ which points to the problem. I'll try to raise the maximum to 3 - 4 A and see ho
 id: 16
 date: 25-05-2025
 media:
-  - media/16-1.jpeg
-  - media/16-2.jpeg
-  - media/16-3.jpeg
+  - media/16-1.jpg
+  - media/16-2.jpg
+  - media/16-3.jpg
 ```
 
 Going back to the board. I was very lucky to order nylon standoffs from Amazon. First, I fixed the steering mechanism a bit by making the arms longer. Second, with their help, it's very convenient to place all the PCBs on the prototype board.
@@ -167,7 +167,7 @@ Going back to the board. I was very lucky to order nylon standoffs from Amazon. 
 id: 17
 date: 25-05-2025
 media:
-  - media/17-1.jpeg
+  - media/17-1.jpg
 ```
 
 rpi I disassembled removing the heating sink but sticking on heatsinks
@@ -178,7 +178,7 @@ rpi I disassembled removing the heating sink but sticking on heatsinks
 id: 18
 date: 25-05-2025
 media:
-  - media/18-1.jpeg
+  - media/18-1.jpg
 ```
 
 Had to slightly enlarge the holes for M3
@@ -189,8 +189,8 @@ Had to slightly enlarge the holes for M3
 id: 19
 date: 25-05-2025
 media:
-  - media/19-1.jpeg
-  - media/19-2.jpeg
+  - media/19-1.jpg
+  - media/19-2.jpg
 ```
 
 Soldered a common GND for all elements using dupont pins
@@ -212,7 +212,7 @@ For the servo I added an LM2596 and set it to 6V as my dad suggested. I will nee
 id: 21
 date: 25-05-2025
 media:
-  - media/21-1.jpeg
+  - media/21-1.jpg
 ```
 
 Before that I also soldered a voltage divider to connect RX rpi and roboclaw because they work at different levels: 3V and 5V. But now I have replaced it with a buck converter.
@@ -223,7 +223,7 @@ Before that I also soldered a voltage divider to connect RX rpi and roboclaw bec
 id: 22
 date: 25-05-2025
 media:
-  - media/22-1.jpeg
+  - media/22-1.jpg
 ```
 
 At first I thought of powering the rpi directly from gpio 2 or 4 but decided not to do it to avoid burning it accidentally. In the end I took a step-down regulator polou 5V D24V90F5 and soldered a usbc cable to connect them. Maybe this could also be done a bit neater.
@@ -245,8 +245,8 @@ The first launch was not very successful because one wire was poorly soldered an
 id: 24
 date: 25-05-2025
 media:
-  - media/24-1.jpeg
-  - media/24-2.jpeg
+  - media/24-1.jpg
+  - media/24-2.jpg
 ```
 
 Resistors for 5V -> 3.3V divider. Had to remember Ohm's law 🤔
@@ -525,7 +525,7 @@ Replaced the cheap servo with a new one from a racing rc for a faster and more p
 id: 52
 date: 25-05-2025
 media:
-  - media/52-1.jpeg
+  - media/52-1.jpg
   - media/52-2.mp4
 ```
 
@@ -537,7 +537,7 @@ As you can see the responsiveness of the steering wheel has increased many times
 id: 53
 date: 30-05-2025
 media:
-  - media/53-1.jpeg
+  - media/53-1.jpg
 ```
 
 Also finally received from Ali three devices that I wanted to solder before switching the robot to lipo 4s
@@ -554,7 +554,7 @@ And on the right is an ADC so I can stick it into the circuit and read the volta
 id: 54
 date: 30-05-2025
 media:
-  - media/54-1.jpeg
+  - media/54-1.jpg
 ```
 
 I cleared the front part to install the arm there a bit later and as you can see now it's getting cramped. I’ll need to go to Bunnings on the weekend and buy acrylic plates to replace the prototype boards with them. The idea with the prototype boards turned out to be useless because I’m not soldering anything on them anyway.
@@ -565,7 +565,7 @@ I cleared the front part to install the arm there a bit later and as you can see
 id: 55
 date: 30-05-2025
 media:
-  - media/55-1.jpeg
+  - media/55-1.jpg
 ```
 
 I think I'll buy a few acrylic plates and cut them exactly like this plate so it looks neater and make a multilayer waffle and mount components on both sides.
@@ -594,7 +594,7 @@ It’s a bit annoying that the steering knuckle and steering linkage are plastic
 id: 58
 date: 30-05-2025
 media:
-  - media/58-1.jpeg
+  - media/58-1.jpg
 ```
 
 It is necessary to check the size and shape but finding an aluminum or copper cam does not seem to be a problem.
@@ -605,7 +605,7 @@ It is necessary to check the size and shape but finding an aluminum or copper ca
 id: 59
 date: 30-05-2025
 media:
-  - media/59-1.jpeg
+  - media/59-1.jpg
 ```
 
 There are no problems with links either and they cost pennies
@@ -652,7 +652,7 @@ Another random thought is that you can make the car go into a drift because of t
 id: 64
 date: 30-05-2025
 media:
-  - media/64-1.jpeg
+  - media/64-1.jpg
 ```
 
 Returning to the electrics. I quickly put together what I want to do with the electrics. The idea is to use relays to turn the circuit on and off only within certain thresholds to prevent battery over-discharge. And as a bonus to turn each component on separately for easier testing and prototyping.
@@ -674,7 +674,7 @@ You can set the UP/DOWN voltage parameters on the relay. The relay turns on if t
 id: 66
 date: 30-05-2025
 media:
-  - media/66-1.jpeg
+  - media/66-1.jpg
 ```
 
 The battery discharge curve is not completely linear but it is still possible to roughly estimate the remaining charge as a percentage. This screen will be installed on the robot to get an approximate idea without looking at the UI. To display telemetry on the dashboard you will need to add a voltage divider and an ADC. It will send data via I2C to the rpi where simple math will be done to calculate the percentage based on voltage and send the data to a ros2 topic. From there it will be read by dashboards or control plane.
@@ -703,7 +703,7 @@ Found my original hubs: [RC 02013 02014 02015 Plastic Steering Hub](https://www.
 id: 69
 date: 31-05-2025
 media:
-  - media/69-1.jpeg
+  - media/69-1.jpg
 ```
 
 Wrote out and drew a rough diagram and plan of what I'm doing so I don't get lost in all this
@@ -714,7 +714,7 @@ Wrote out and drew a rough diagram and plan of what I'm doing so I don't get los
 id: 70
 date: 31-05-2025
 media:
-  - media/70-1.jpeg
+  - media/70-1.jpg
 ```
 
 Will be called NVIDIA Jetson Orin Nano super dev kit. For now not so much because I hit the ceiling of rpi4 but rather to understand the size and future placement of the printed circuit boards on the robot.
@@ -725,8 +725,8 @@ Will be called NVIDIA Jetson Orin Nano super dev kit. For now not so much becaus
 id: 71
 date: 31-05-2025
 media:
-  - media/71-1.jpeg
-  - media/71-2.jpeg
+  - media/71-1.jpg
+  - media/71-2.jpg
 ```
 
 Spent 2 days trying to install L4T on Jetson. It turned out to be much harder than I thought. At first I naively thought I could just write the SD card image to NVMe and tweak the BIOS to boot from it but that didn't work.
@@ -737,7 +737,7 @@ Spent 2 days trying to install L4T on Jetson. It turned out to be much harder th
 id: 72
 date: 31-05-2025
 media:
-  - media/72-1.jpeg
+  - media/72-1.jpg
 ```
 
 For this I used my cube with ubuntu. Because the cube has only 1 slot for nvme m.2 I had to boot the system from a flash drive using try ubuntu. After that I fixed the loader and bios configs. But the system refused to boot. I spent about 2 hours with ChatGPT but still could not fix it.
@@ -748,7 +748,7 @@ For this I used my cube with ubuntu. Because the cube has only 1 slot for nvme m
 id: 73
 date: 31-05-2025
 media:
-  - media/73-1.jpeg
+  - media/73-1.jpg
 ```
 
 In the end I returned to the option with nvidia sdk manager
@@ -759,7 +759,7 @@ In the end I returned to the option with nvidia sdk manager
 id: 74
 date: 31-05-2025
 media:
-  - media/74-1.jpeg
+  - media/74-1.jpg
 ```
 
 I was able to flash it only on the third try and each time it took about 30 minutes. Every time something new would break. It turned out the problems were because of wireguard or ufw or sometimes ssh would disconnect.
@@ -770,7 +770,7 @@ I was able to flash it only on the third try and each time it took about 30 minu
 id: 75
 date: 31-05-2025
 media:
-  - media/75-1.jpeg
+  - media/75-1.jpg
 ```
 
 In the end, I saw that treasured screen. Now the system boots from nvme and it looks like everything works. Now I need to move everything to the new platform and connect and solder all the wires.
@@ -781,7 +781,7 @@ In the end, I saw that treasured screen. Now the system boots from nvme and it l
 id: 76
 date: 31-05-2025
 media:
-  - media/76-1.jpeg
+  - media/76-1.jpg
 ```
 
 About power supply. At first I thought about using an RC lipo at 7000mah but decided to move away from this idea. It bothers me a bit that these batteries can be (although unlikely) quite dangerous. They need to be charged under supervision, they don’t have built-in BMS. But they give much higher discharge current (I probably won’t need > 10A) and are much lighter than a stack of 18650. I took a long time to choose and finally came across V mount batteries that are used in professional video production. These are already assembled 18650 batteries with built-in BMS. They can deliver 14.45V at 14A which looks more than enough and at the same time have a pretty good capacity.
@@ -792,9 +792,9 @@ About power supply. At first I thought about using an RC lipo at 7000mah but dec
 id: 77
 date: 31-05-2025
 media:
-  - media/77-1.jpeg
-  - media/77-2.jpeg
-  - media/77-3.jpeg
+  - media/77-1.jpg
+  - media/77-2.jpg
+  - media/77-3.jpg
 ```
 
 I also took a V plate for it to securely attach it to the robot.
@@ -805,8 +805,8 @@ I also took a V plate for it to securely attach it to the robot.
 id: 78
 date: 31-05-2025
 media:
-  - media/78-1.jpeg
-  - media/78-2.jpeg
+  - media/78-1.jpg
+  - media/78-2.jpg
 ```
 
 It is quite heavy and tall so I will have to carry it to the 3rd floor. For installing the PCB I bought acrylic glass and cut out the same shape as the metal plates with a jigsaw so I can drill holes simply anywhere.
@@ -817,7 +817,7 @@ It is quite heavy and tall so I will have to carry it to the 3rd floor. For inst
 id: 79
 date: 31-05-2025
 media:
-  - media/79-1.jpeg
+  - media/79-1.jpg
 ```
 
 By the way here is jetson in recovery mode during reflashing. To switch to this mode you need to short 2 contacts.
@@ -828,7 +828,7 @@ By the way here is jetson in recovery mode during reflashing. To switch to this 
 id: 80
 date: 31-05-2025
 media:
-  - media/80-1.jpeg
+  - media/80-1.jpg
 ```
 
 GPD WIN4 looks like the perfect controller for a robot. The price is of course insane but a full-fledged computer with a keyboard is quite attractive.
@@ -863,7 +863,7 @@ The result is on the screen. The terminal at the bottom left is a Python script 
 id: 83
 date: 31-05-2025
 media:
-  - media/83-1.jpeg
+  - media/83-1.jpg
 ```
 
 By the way here is a charger with balancing for lipo which I don’t need anymore. Maybe someday I’ll get into drones or rc cars then it might be useful again.
@@ -874,7 +874,7 @@ By the way here is a charger with balancing for lipo which I don’t need anymor
 id: 84
 date: 31-05-2025
 media:
-  - media/84-1.jpeg
+  - media/84-1.jpg
 ```
 
 A few more photos that I forgot to post at the very beginning of the process
@@ -885,7 +885,7 @@ A few more photos that I forgot to post at the very beginning of the process
 id: 85
 date: 31-05-2025
 media:
-  - media/85-1.jpeg
+  - media/85-1.jpg
 ```
 
 Simply an indispensable thing during prototyping. I don't even know what I would do without it.
@@ -896,7 +896,7 @@ Simply an indispensable thing during prototyping. I don't even know what I would
 id: 86
 date: 31-05-2025
 media:
-  - media/86-1.jpeg
+  - media/86-1.jpg
 ```
 
 Silicone standoffs turned out to be incredibly convenient for mounting boards on the robot.
@@ -907,7 +907,7 @@ Silicone standoffs turned out to be incredibly convenient for mounting boards on
 id: 87
 date: 31-05-2025
 media:
-  - media/87-1.jpeg
+  - media/87-1.jpg
 ```
 
 And this is the crazy roboclaw 2x30 motor controller which supports up to 30 amps and can work with encoders via uart or usb. Maybe something simpler would have been enough but it does look impressive and cool.
@@ -918,7 +918,7 @@ And this is the crazy roboclaw 2x30 motor controller which supports up to 30 amp
 id: 88
 date: 31-05-2025
 media:
-  - media/88-1.jpeg
+  - media/88-1.jpg
 ```
 
 Every time I order from AliExpress I get something wrong. It's already getting funny. I wanted to make gpio pins a bit better and ordered a 40 pin header. But instead I got a header with two rows of 40 instead of 40 total. Okay, til.
@@ -929,7 +929,7 @@ Every time I order from AliExpress I get something wrong. It's already getting f
 id: 89
 date: 31-05-2025
 media:
-  - media/89-1.jpeg
+  - media/89-1.jpg
 ```
 
 Short dupont wires and multicolored pins have also arrived. I can't wait to start assembling version 0.0.2
@@ -940,7 +940,7 @@ Short dupont wires and multicolored pins have also arrived. I can't wait to star
 id: 90
 date: 17-06-2025
 media:
-  - media/90-1.jpeg
+  - media/90-1.jpg
 ```
 
 It also continued with the barrel jack for powering the jetson. The diameter was wrong 🤦‍♂️
@@ -951,7 +951,7 @@ It also continued with the barrel jack for powering the jetson. The diameter was
 id: 91
 date: 17-06-2025
 media:
-  - media/91-1.jpeg
+  - media/91-1.jpg
 ```
 
 Of the more interesting things - ina226 i2c. Simply put a voltage sensor to read voltage and current over i2c and display the voltage on the robot dashboard. There is never too much telemetry.
@@ -962,7 +962,7 @@ Of the more interesting things - ina226 i2c. Simply put a voltage sensor to read
 id: 92
 date: 17-06-2025
 media:
-  - media/92-1.jpeg
+  - media/92-1.jpg
 ```
 
 Since i2c supports addressing you can simply parallel the pins by changing the device addresses. For this there is such a small and handy 10 channel device.
@@ -973,7 +973,7 @@ Since i2c supports addressing you can simply parallel the pins by changing the d
 id: 93
 date: 17-06-2025
 media:
-  - media/93-1.jpeg
+  - media/93-1.jpg
 ```
 
 And finally the ball rod ends for the steering link have arrived. The link itself and the hubs haven't arrived yet. I don't remember if I wrote about it or not but I want to replace all the plastic parts with these metal upgrades.
@@ -984,7 +984,7 @@ And finally the ball rod ends for the steering link have arrived. The link itsel
 id: 94
 date: 17-06-2025
 media:
-  - media/94-1.jpeg
+  - media/94-1.jpg
 ```
 
 And finally - metal cutting discs and taps for threading. I will try to place all the electronics compactly and securely.
@@ -995,7 +995,7 @@ And finally - metal cutting discs and taps for threading. I will try to place al
 id: 95
 date: 17-06-2025
 media:
-  - media/95-1.jpeg
+  - media/95-1.jpg
 ```
 
 It seems it's time to take apart the first prototype and start assembling a new v0.0.2
@@ -1006,12 +1006,12 @@ It seems it's time to take apart the first prototype and start assembling a new 
 id: 96
 date: 17-06-2025
 media:
-  - media/96-1.jpeg
-  - media/96-2.jpeg
-  - media/96-3.jpeg
-  - media/96-4.jpeg
-  - media/96-5.jpeg
-  - media/96-6.jpeg
+  - media/96-1.jpg
+  - media/96-2.jpg
+  - media/96-3.jpg
+  - media/96-4.jpg
+  - media/96-5.jpg
+  - media/96-6.jpg
 ```
 
 Disassembled the robot completely and started assembling the arm
@@ -1022,8 +1022,8 @@ Disassembled the robot completely and started assembling the arm
 id: 97
 date: 18-06-2025
 media:
-  - media/97-1.jpeg
-  - media/97-2.jpeg
+  - media/97-1.jpg
+  - media/97-2.jpg
 ```
 
 I was very lucky that the holes on the metal plate almost perfectly matched the v plate. The only thing I did for reliability was drill a couple of M4 holes.
@@ -1045,11 +1045,11 @@ Here is how it looks at first approximation. I will trim the base a bit later so
 id: 99
 date: 18-06-2025
 media:
-  - media/99-1.jpeg
-  - media/99-2.jpeg
-  - media/99-3.jpeg
-  - media/99-4.jpeg
-  - media/99-5.jpeg
+  - media/99-1.jpg
+  - media/99-2.jpg
+  - media/99-3.jpg
+  - media/99-4.jpg
+  - media/99-5.jpg
 ```
 
 Next I want to place all the boards on acrylic plates. I cut the needed shape with a jigsaw drilled holes and cut threads to screw in the standoffs.
@@ -1060,7 +1060,7 @@ Next I want to place all the boards on acrylic plates. I cut the needed shape wi
 id: 100
 date: 18-06-2025
 media:
-  - media/100-1.jpeg
+  - media/100-1.jpg
 ```
 
 That's all for today, this is how it looks so far but there will also be an intermediate level where the nvidia jetson and a couple of other boards will be located.
@@ -1071,9 +1071,9 @@ That's all for today, this is how it looks so far but there will also be an inte
 id: 101
 date: 19-06-2025
 media:
-  - media/101-1.jpeg
-  - media/101-2.jpeg
-  - media/101-3.jpeg
+  - media/101-1.jpg
+  - media/101-2.jpg
+  - media/101-3.jpg
 ```
 
 Replaced the plastic steering hubs with aluminum ones and matched the color to the mechanical arm.
@@ -1084,7 +1084,7 @@ Replaced the plastic steering hubs with aluminum ones and matched the color to t
 id: 102
 date: 25-06-2025
 media:
-  - media/102-1.jpeg
+  - media/102-1.jpg
 ```
 
 Somehow I don't really like how cutting acrylic sheets with a jigsaw turns out. I decided to try ordering laser cutting.
@@ -1106,8 +1106,8 @@ Bought a mini drill to quickly drill holes.
 id: 104
 date: 25-06-2025
 media:
-  - media/104-1.jpeg
-  - media/104-2.jpeg
+  - media/104-1.jpg
+  - media/104-2.jpg
 ```
 
 Lithium grease has arrived. Lubricated all moving parts.
@@ -1118,9 +1118,9 @@ Lithium grease has arrived. Lubricated all moving parts.
 id: 105
 date: 25-06-2025
 media:
-  - media/105-1.jpeg
-  - media/105-2.jpeg
-  - media/105-3.jpeg
+  - media/105-1.jpg
+  - media/105-2.jpg
+  - media/105-3.jpg
 ```
 
 Tried to connect the rpi camera with jetson but nothing worked out. Well, it's okay, I'll wait for the zed and then I'll do it properly.
@@ -1131,10 +1131,10 @@ Tried to connect the rpi camera with jetson but nothing worked out. Well, it's o
 id: 106
 date: 25-06-2025
 media:
-  - media/106-1.jpeg
-  - media/106-2.jpeg
-  - media/106-3.jpeg
-  - media/106-4.jpeg
+  - media/106-1.jpg
+  - media/106-2.jpg
+  - media/106-3.jpg
+  - media/106-4.jpg
 ```
 
 Today I also picked up the laser cut acrylic. It turned out perfect and very neat. For this version I will drill the holes by hand and for the next version I will draw all the holes in CAD so everything will be perfect.
@@ -1145,9 +1145,9 @@ Today I also picked up the laser cut acrylic. It turned out perfect and very nea
 id: 107
 date: 25-06-2025
 media:
-  - media/107-1.jpeg
-  - media/107-2.jpeg
-  - media/107-3.jpeg
+  - media/107-1.jpg
+  - media/107-2.jpg
+  - media/107-3.jpg
 ```
 
 Placed all the boards on the acrylic and fixed some of them on standoffs. Looks like everything fits but I still need to think about the layout.
@@ -1185,8 +1185,8 @@ Read: [Depth accuracy analysis of the ZED 2i Stereo Camera in an indoor Environm
 id: 111
 date: 29-06-2025
 media:
-  - media/111-1.jpeg
-  - media/111-2.jpeg
+  - media/111-1.jpg
+  - media/111-2.jpg
 ```
 
 Figured out how ina226 works - a current sensor that can be read via i2c. Everything is quite simple but by default the Chinese breakout board comes with an R100 shunt which is too much for measuring currents higher than 819.175 mA. Although the power is enough and nothing will break the data will be cut off. But this is very easy to fix by replacing the shunt with an R010 (mΩ). After this you can measure currents up to 8.2A but with lower accuracy. This is of course overkill but 0.8A is too little as well. Ordered R010 2512 (in SMD form factor) on Aliexpress because as usual there is nothing in jaycar.
@@ -1221,9 +1221,9 @@ At the same time, the steering servo is connected via PCA9685 and directly to th
 id: 114
 date: 29-06-2025
 media:
-  - media/114-1.jpeg
-  - media/114-2.jpeg
-  - media/114-3.jpeg
+  - media/114-1.jpg
+  - media/114-2.jpg
+  - media/114-3.jpg
 ```
 
 That's all for today. It still doesn't drive yet but it seems that the next milestone is already in sight.

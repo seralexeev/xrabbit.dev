@@ -13,7 +13,10 @@
         "retool.config.json": true
     },
     "cSpell.words": [
+        "cwebp",
         "glightbox",
+        "noopener",
+        "noreferrer",
         "Аккерман"
     ]
 }

@@ -83,9 +83,11 @@
                     }
 
                     .post {
+                        width: 100%;
                         display: flex;
                         flex-direction: column;
                         gap: 8px;
+                        overflow: hidden;
                     }
 
                     .post-header {
@@ -111,6 +113,7 @@
                         width: 100%;
                         height: 256px;
                         overflow: hidden;
+                        position: relative;
                     }
 
                     .media-item img,
@@ -121,10 +124,27 @@
                         cursor: pointer;
                     }
 
+                    .media-item .video-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: var(--color-black);
+                        opacity: 0.7;
+                        color: var(--color-white);
+                        font-size: 16px;
+                        z-index: 1;
+                    }
+
                     a {
                         color: var(--color-blue);
                         text-decoration: underline;
                         text-underline-offset: 0.2rem;
+                        word-wrap: break-word;
                     }
 
                     u {
@@ -134,6 +154,23 @@
 
                     p {
                         margin-bottom: 16px;
+                    }
+
+                    ul {
+                        margin-left: 20px;
+                    }
+
+                    ul li > p {
+                        margin-bottom: 0;
+                    }
+
+                    ul li {
+                        margin-bottom: 8px;
+                    }
+
+                    ul li::marker {
+                        content: '> ';
+                        color: var(--color-gray);
                     }
 
                     code {
@@ -300,23 +337,19 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>That&#39;s all for today. It still doesn&#39;t drive yet but it seems that the next milestone is already in sight.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/114-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/114-1.jpeg" />
+        <a class="media-item" href="media/114-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/114-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/114-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/114-2.jpeg" />
+        <a class="media-item" href="media/114-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/114-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/114-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/114-3.jpeg" />
+        <a class="media-item" href="media/114-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/114-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="113">
@@ -352,19 +385,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Figured out how ina226 works - a current sensor that can be read via i2c. Everything is quite simple but by default the Chinese breakout board comes with an R100 shunt which is too much for measuring currents higher than 819.175 mA. Although the power is enough and nothing will break the data will be cut off. But this is very easy to fix by replacing the shunt with an R010 (mΩ). After this you can measure currents up to 8.2A but with lower accuracy. This is of course overkill but 0.8A is too little as well. Ordered R010 2512 (in SMD form factor) on Aliexpress because as usual there is nothing in jaycar.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/111-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/111-1.jpeg" />
+        <a class="media-item" href="media/111-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/111-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/111-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/111-2.jpeg" />
+        <a class="media-item" href="media/111-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/111-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="110">
@@ -404,23 +433,19 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Placed all the boards on the acrylic and fixed some of them on standoffs. Looks like everything fits but I still need to think about the layout.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/107-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/107-1.jpeg" />
+        <a class="media-item" href="media/107-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/107-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/107-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/107-2.jpeg" />
+        <a class="media-item" href="media/107-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/107-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/107-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/107-3.jpeg" />
+        <a class="media-item" href="media/107-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/107-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="106">
@@ -430,27 +455,23 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Today I also picked up the laser cut acrylic. It turned out perfect and very neat. For this version I will drill the holes by hand and for the next version I will draw all the holes in CAD so everything will be perfect.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/106-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/106-1.jpeg" />
+        <a class="media-item" href="media/106-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/106-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/106-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/106-2.jpeg" />
+        <a class="media-item" href="media/106-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/106-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/106-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/106-3.jpeg" />
+        <a class="media-item" href="media/106-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/106-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/106-4.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/106-4.jpeg" />
+        <a class="media-item" href="media/106-4.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/106-4.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="105">
@@ -460,23 +481,19 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Tried to connect the rpi camera with jetson but nothing worked out. Well, it&#39;s okay, I&#39;ll wait for the zed and then I&#39;ll do it properly.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/105-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/105-1.jpeg" />
+        <a class="media-item" href="media/105-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/105-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/105-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/105-2.jpeg" />
+        <a class="media-item" href="media/105-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/105-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/105-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/105-3.jpeg" />
+        <a class="media-item" href="media/105-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/105-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="104">
@@ -486,19 +503,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Lithium grease has arrived. Lubricated all moving parts.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/104-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/104-1.jpeg" />
+        <a class="media-item" href="media/104-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/104-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/104-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/104-2.jpeg" />
+        <a class="media-item" href="media/104-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/104-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="103">
@@ -508,16 +521,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Bought a mini drill to quickly drill holes.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/103-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/103-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/103-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="102">
@@ -527,15 +536,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Somehow I don&#39;t really like how cutting acrylic sheets with a jigsaw turns out. I decided to try ordering laser cutting.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/102-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/102-1.jpeg" />
+        <a class="media-item" href="media/102-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/102-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="101">
@@ -545,23 +550,19 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Replaced the plastic steering hubs with aluminum ones and matched the color to the mechanical arm.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/101-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/101-1.jpeg" />
+        <a class="media-item" href="media/101-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/101-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/101-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/101-2.jpeg" />
+        <a class="media-item" href="media/101-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/101-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/101-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/101-3.jpeg" />
+        <a class="media-item" href="media/101-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/101-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="100">
@@ -571,15 +572,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>That&#39;s all for today, this is how it looks so far but there will also be an intermediate level where the nvidia jetson and a couple of other boards will be located.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/100-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/100-1.jpeg" />
+        <a class="media-item" href="media/100-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/100-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="99">
@@ -589,31 +586,27 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Next I want to place all the boards on acrylic plates. I cut the needed shape with a jigsaw drilled holes and cut threads to screw in the standoffs.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/99-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/99-1.jpeg" />
+        <a class="media-item" href="media/99-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/99-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/99-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/99-2.jpeg" />
+        <a class="media-item" href="media/99-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/99-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/99-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/99-3.jpeg" />
+        <a class="media-item" href="media/99-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/99-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/99-4.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/99-4.jpeg" />
+        <a class="media-item" href="media/99-4.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/99-4.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/99-5.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/99-5.jpeg" />
+        <a class="media-item" href="media/99-5.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/99-5.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="98">
@@ -623,16 +616,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Here is how it looks at first approximation. I will trim the base a bit later so the corners won&#39;t stick out so much.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/98-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/98-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/98-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="97">
@@ -642,19 +631,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I was very lucky that the holes on the metal plate almost perfectly matched the v plate. The only thing I did for reliability was drill a couple of M4 holes.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/97-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/97-1.jpeg" />
+        <a class="media-item" href="media/97-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/97-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/97-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/97-2.jpeg" />
+        <a class="media-item" href="media/97-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/97-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="96">
@@ -664,35 +649,31 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Disassembled the robot completely and started assembling the arm</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/96-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/96-1.jpeg" />
+        <a class="media-item" href="media/96-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/96-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/96-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/96-2.jpeg" />
+        <a class="media-item" href="media/96-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/96-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/96-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/96-3.jpeg" />
+        <a class="media-item" href="media/96-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/96-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/96-4.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/96-4.jpeg" />
+        <a class="media-item" href="media/96-4.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/96-4.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/96-5.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/96-5.jpeg" />
+        <a class="media-item" href="media/96-5.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/96-5.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/96-6.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/96-6.jpeg" />
+        <a class="media-item" href="media/96-6.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/96-6.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="95">
@@ -702,15 +683,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>It seems it&#39;s time to take apart the first prototype and start assembling a new v0.0.2</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/95-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/95-1.jpeg" />
+        <a class="media-item" href="media/95-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/95-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="94">
@@ -720,15 +697,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>And finally - metal cutting discs and taps for threading. I will try to place all the electronics compactly and securely.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/94-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/94-1.jpeg" />
+        <a class="media-item" href="media/94-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/94-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="93">
@@ -738,15 +711,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>And finally the ball rod ends for the steering link have arrived. The link itself and the hubs haven&#39;t arrived yet. I don&#39;t remember if I wrote about it or not but I want to replace all the plastic parts with these metal upgrades.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/93-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/93-1.jpeg" />
+        <a class="media-item" href="media/93-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/93-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="92">
@@ -756,15 +725,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Since i2c supports addressing you can simply parallel the pins by changing the device addresses. For this there is such a small and handy 10 channel device.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/92-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/92-1.jpeg" />
+        <a class="media-item" href="media/92-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/92-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="91">
@@ -774,15 +739,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Of the more interesting things - ina226 i2c. Simply put a voltage sensor to read voltage and current over i2c and display the voltage on the robot dashboard. There is never too much telemetry.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/91-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/91-1.jpeg" />
+        <a class="media-item" href="media/91-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/91-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="90">
@@ -792,15 +753,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>It also continued with the barrel jack for powering the jetson. The diameter was wrong 🤦‍♂️</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/90-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/90-1.jpeg" />
+        <a class="media-item" href="media/90-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/90-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="89">
@@ -810,15 +767,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Short dupont wires and multicolored pins have also arrived. I can&#39;t wait to start assembling version 0.0.2</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/89-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/89-1.jpeg" />
+        <a class="media-item" href="media/89-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/89-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="88">
@@ -828,15 +781,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Every time I order from AliExpress I get something wrong. It&#39;s already getting funny. I wanted to make gpio pins a bit better and ordered a 40 pin header. But instead I got a header with two rows of 40 instead of 40 total. Okay, til.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/88-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/88-1.jpeg" />
+        <a class="media-item" href="media/88-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/88-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="87">
@@ -846,15 +795,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>And this is the crazy roboclaw 2x30 motor controller which supports up to 30 amps and can work with encoders via uart or usb. Maybe something simpler would have been enough but it does look impressive and cool.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/87-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/87-1.jpeg" />
+        <a class="media-item" href="media/87-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/87-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="86">
@@ -864,15 +809,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Silicone standoffs turned out to be incredibly convenient for mounting boards on the robot.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/86-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/86-1.jpeg" />
+        <a class="media-item" href="media/86-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/86-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="85">
@@ -882,15 +823,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Simply an indispensable thing during prototyping. I don&#39;t even know what I would do without it.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/85-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/85-1.jpeg" />
+        <a class="media-item" href="media/85-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/85-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="84">
@@ -900,15 +837,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>A few more photos that I forgot to post at the very beginning of the process</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/84-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/84-1.jpeg" />
+        <a class="media-item" href="media/84-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/84-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="83">
@@ -918,15 +851,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>By the way here is a charger with balancing for lipo which I don’t need anymore. Maybe someday I’ll get into drones or rc cars then it might be useful again.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/83-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/83-1.jpeg" />
+        <a class="media-item" href="media/83-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/83-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="82">
@@ -937,16 +866,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>After 2 days I figured out the WebRTC protocol which I&#39;m going to use to stream video from the robot&#39;s camera and control the robot from the browser. Of course it&#39;s not just an http server with requests and responses. By this point I&#39;ve already run into a bunch of edge cases and behaviors during reconnects and reboots. I started with a smart signaling server but ended up with a simple broadcast of messages via websocket.</p>
 <p>The result is on the screen. The terminal at the bottom left is a Python script that sends an offer, the browser on the left is the robot&#39;s UI connected to a DualSense. After the connection is established the joystick commands are sent through webrtc to the Python script via data channel and for now they are just logged.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/82-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/82-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/82-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="81">
@@ -956,16 +881,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I tried for a long time to get these rpi csi cameras to work with ubuntu but nothing worked. I decided to try the official linux for rpi and everything worked right away. Looks like I will struggle with it for a long time until I save up money for a zed 2i. Also, jetson has a slightly different connector for csi and I will have to order an adapter.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/81-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/81-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/81-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="80">
@@ -975,15 +896,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>GPD WIN4 looks like the perfect controller for a robot. The price is of course insane but a full-fledged computer with a keyboard is quite attractive.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/80-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/80-1.jpeg" />
+        <a class="media-item" href="media/80-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/80-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="79">
@@ -993,15 +910,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>By the way here is jetson in recovery mode during reflashing. To switch to this mode you need to short 2 contacts.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/79-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/79-1.jpeg" />
+        <a class="media-item" href="media/79-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/79-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="78">
@@ -1011,19 +924,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>It is quite heavy and tall so I will have to carry it to the 3rd floor. For installing the PCB I bought acrylic glass and cut out the same shape as the metal plates with a jigsaw so I can drill holes simply anywhere.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/78-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/78-1.jpeg" />
+        <a class="media-item" href="media/78-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/78-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/78-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/78-2.jpeg" />
+        <a class="media-item" href="media/78-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/78-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="77">
@@ -1033,23 +942,19 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I also took a V plate for it to securely attach it to the robot.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/77-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/77-1.jpeg" />
+        <a class="media-item" href="media/77-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/77-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/77-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/77-2.jpeg" />
+        <a class="media-item" href="media/77-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/77-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/77-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/77-3.jpeg" />
+        <a class="media-item" href="media/77-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/77-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="76">
@@ -1059,15 +964,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>About power supply. At first I thought about using an RC lipo at 7000mah but decided to move away from this idea. It bothers me a bit that these batteries can be (although unlikely) quite dangerous. They need to be charged under supervision, they don’t have built-in BMS. But they give much higher discharge current (I probably won’t need &gt; 10A) and are much lighter than a stack of 18650. I took a long time to choose and finally came across V mount batteries that are used in professional video production. These are already assembled 18650 batteries with built-in BMS. They can deliver 14.45V at 14A which looks more than enough and at the same time have a pretty good capacity.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/76-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/76-1.jpeg" />
+        <a class="media-item" href="media/76-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/76-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="75">
@@ -1077,15 +978,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>In the end, I saw that treasured screen. Now the system boots from nvme and it looks like everything works. Now I need to move everything to the new platform and connect and solder all the wires.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/75-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/75-1.jpeg" />
+        <a class="media-item" href="media/75-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/75-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="74">
@@ -1095,15 +992,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I was able to flash it only on the third try and each time it took about 30 minutes. Every time something new would break. It turned out the problems were because of wireguard or ufw or sometimes ssh would disconnect.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/74-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/74-1.jpeg" />
+        <a class="media-item" href="media/74-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/74-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="73">
@@ -1113,15 +1006,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>In the end I returned to the option with nvidia sdk manager</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/73-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/73-1.jpeg" />
+        <a class="media-item" href="media/73-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/73-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="72">
@@ -1131,15 +1020,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>For this I used my cube with ubuntu. Because the cube has only 1 slot for nvme m.2 I had to boot the system from a flash drive using try ubuntu. After that I fixed the loader and bios configs. But the system refused to boot. I spent about 2 hours with ChatGPT but still could not fix it.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/72-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/72-1.jpeg" />
+        <a class="media-item" href="media/72-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/72-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="71">
@@ -1149,19 +1034,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Spent 2 days trying to install L4T on Jetson. It turned out to be much harder than I thought. At first I naively thought I could just write the SD card image to NVMe and tweak the BIOS to boot from it but that didn&#39;t work.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/71-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/71-1.jpeg" />
+        <a class="media-item" href="media/71-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/71-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/71-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/71-2.jpeg" />
+        <a class="media-item" href="media/71-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/71-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="70">
@@ -1171,15 +1052,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Will be called NVIDIA Jetson Orin Nano super dev kit. For now not so much because I hit the ceiling of rpi4 but rather to understand the size and future placement of the printed circuit boards on the robot.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/70-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/70-1.jpeg" />
+        <a class="media-item" href="media/70-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/70-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="69">
@@ -1189,15 +1066,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Wrote out and drew a rough diagram and plan of what I&#39;m doing so I don&#39;t get lost in all this</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/69-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/69-1.jpeg" />
+        <a class="media-item" href="media/69-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/69-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="68">
@@ -1227,15 +1100,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>The battery discharge curve is not completely linear but it is still possible to roughly estimate the remaining charge as a percentage. This screen will be installed on the robot to get an approximate idea without looking at the UI. To display telemetry on the dashboard you will need to add a voltage divider and an ADC. It will send data via I2C to the rpi where simple math will be done to calculate the percentage based on voltage and send the data to a ros2 topic. From there it will be read by dashboards or control plane.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/66-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/66-1.jpeg" />
+        <a class="media-item" href="media/66-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/66-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="65">
@@ -1245,16 +1114,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>You can set the UP/DOWN voltage parameters on the relay. The relay turns on if the voltage is higher than 11.4V and turns off if the voltage is lower than 10.5V. This is a kind of hysteresis to avoid flickering when crossing the threshold.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/65-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/65-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/65-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="64">
@@ -1264,15 +1129,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Returning to the electrics. I quickly put together what I want to do with the electrics. The idea is to use relays to turn the circuit on and off only within certain thresholds to prevent battery over-discharge. And as a bonus to turn each component on separately for easier testing and prototyping.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/64-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/64-1.jpeg" />
+        <a class="media-item" href="media/64-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/64-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="63">
@@ -1322,15 +1183,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>There are no problems with links either and they cost pennies</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/59-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/59-1.jpeg" />
+        <a class="media-item" href="media/59-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/59-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="58">
@@ -1340,15 +1197,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>It is necessary to check the size and shape but finding an aluminum or copper cam does not seem to be a problem.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/58-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/58-1.jpeg" />
+        <a class="media-item" href="media/58-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/58-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="57">
@@ -1378,15 +1231,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I think I&#39;ll buy a few acrylic plates and cut them exactly like this plate so it looks neater and make a multilayer waffle and mount components on both sides.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/55-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/55-1.jpeg" />
+        <a class="media-item" href="media/55-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/55-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="54">
@@ -1396,15 +1245,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I cleared the front part to install the arm there a bit later and as you can see now it&#39;s getting cramped. I’ll need to go to Bunnings on the weekend and buy acrylic plates to replace the prototype boards with them. The idea with the prototype boards turned out to be useless because I’m not soldering anything on them anyway.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/54-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/54-1.jpeg" />
+        <a class="media-item" href="media/54-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/54-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="53">
@@ -1417,15 +1262,11 @@ Perhaps iptables or your kernel needs to be upgraded.
 <p>At the bottom is just an array of switches so you can power all nodes separately and turn some off if needed. There are already 4 now and soon there will be at least 8.</p>
 <p>And on the right is an ADC so I can stick it into the circuit and read the voltage on the rpi and send it to a ros2 topic. So the battery level can be displayed nicely in the UI.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/53-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/53-1.jpeg" />
+        <a class="media-item" href="media/53-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/53-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="52">
@@ -1435,20 +1276,16 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>As you can see the responsiveness of the steering wheel has increased many times. Also bldc is much quieter.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/52-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/52-1.jpeg" />
+        <a class="media-item" href="media/52-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/52-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
         <a class="media-item" href="media/52-2.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/52-2.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/52-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="51">
@@ -1458,21 +1295,17 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Replaced the cheap servo with a new one from a racing rc for a faster and more precise steering.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/51-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/51-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/51-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
         <a class="media-item" href="media/51-2.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/51-2.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/51-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="50">
@@ -1629,16 +1462,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>First ride. The steering wheel is a bit unbalanced, the turn angle is too small, it should be increased and the pwm pulses should be adjusted. The motors are kind of slow, either the wheels need to be bigger or other gearboxes should be used. But overall I am very happy that it moved.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/37-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/37-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/37-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="36">
@@ -1648,16 +1477,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>I had already tested the servos before but now I connected them properly to the controller and refined the Python script.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/36-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/36-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/36-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="35">
@@ -1777,19 +1602,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Resistors for 5V -&gt; 3.3V divider. Had to remember Ohm&#39;s law 🤔</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/24-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/24-1.jpeg" />
+        <a class="media-item" href="media/24-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/24-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/24-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/24-2.jpeg" />
+        <a class="media-item" href="media/24-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/24-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="23">
@@ -1799,16 +1620,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>The first launch was not very successful because one wire was poorly soldered and I spent a long time looking for the problem but after checking with a multimeter I found the issue and everything started working.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/23-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/23-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/23-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="22">
@@ -1818,15 +1635,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>At first I thought of powering the rpi directly from gpio 2 or 4 but decided not to do it to avoid burning it accidentally. In the end I took a step-down regulator polou 5V D24V90F5 and soldered a usbc cable to connect them. Maybe this could also be done a bit neater.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/22-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/22-1.jpeg" />
+        <a class="media-item" href="media/22-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/22-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="21">
@@ -1836,15 +1649,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Before that I also soldered a voltage divider to connect RX rpi and roboclaw because they work at different levels: 3V and 5V. But now I have replaced it with a buck converter.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/21-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/21-1.jpeg" />
+        <a class="media-item" href="media/21-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/21-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="20">
@@ -1854,16 +1663,12 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>For the servo I added an LM2596 and set it to 6V as my dad suggested. I will need to order a few more of these but with a display so it would be convenient to monitor the voltage without a multimeter.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/20-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/20-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/20-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="19">
@@ -1873,19 +1678,15 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Soldered a common GND for all elements using dupont pins</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/19-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/19-1.jpeg" />
+        <a class="media-item" href="media/19-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/19-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/19-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/19-2.jpeg" />
+        <a class="media-item" href="media/19-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/19-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="18">
@@ -1895,15 +1696,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Had to slightly enlarge the holes for M3</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/18-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/18-1.jpeg" />
+        <a class="media-item" href="media/18-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/18-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="17">
@@ -1913,15 +1710,11 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>rpi I disassembled removing the heating sink but sticking on heatsinks</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/17-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/17-1.jpeg" />
+        <a class="media-item" href="media/17-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/17-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="16">
@@ -1931,23 +1724,19 @@ Perhaps iptables or your kernel needs to be upgraded.
             </div>
             <div class="post-body"><p>Going back to the board. I was very lucky to order nylon standoffs from Amazon. First, I fixed the steering mechanism a bit by making the arms longer. Second, with their help, it&#39;s very convenient to place all the PCBs on the prototype board.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/16-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/16-1.jpeg" />
+        <a class="media-item" href="media/16-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/16-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/16-2.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/16-2.jpeg" />
+        <a class="media-item" href="media/16-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/16-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
     
-        <a class="media-item" href="media/16-3.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/16-3.jpeg" />
+        <a class="media-item" href="media/16-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/16-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="15">
@@ -1961,16 +1750,12 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
 </code></pre>
 <p>which points to the problem. I&#39;ll try to raise the maximum to 3 - 4 A and see how things go.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/15-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/15-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/15-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="14">
@@ -1980,15 +1765,11 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             </div>
             <div class="post-body"><p>Today there is pretty good progress. I bought 3 prototype boards and connected them together.</p>
 </div>
-            
             <div class="post-media">
-                
-        <a class="media-item" href="media/14-1.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="media/14-1.jpeg" />
+        <a class="media-item" href="media/14-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/14-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="13">
@@ -2018,16 +1799,12 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             </div>
             <div class="post-body"><p>The servo also works but I am waiting for a quieter and more precise brushless one from Aliexpress. When it arrives I will replace it.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/11-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/11-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/11-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="10">
@@ -2067,16 +1844,12 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             </div>
             <div class="post-body"><p>Finally launched the motors via UART</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/7-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div>Click to Play</div>
-            <video src="media/7-1.mp4" preload="none"></video>
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/7-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="6">
@@ -2126,15 +1899,11 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             </div>
             <div class="post-body"><p>Ordered some basic components and tools for assembly from aliexpress and amazon.</p>
 </div>
-            
             <div class="post-media">
-                
         <a class="media-item" href="media/1-1.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="media/1-1.jpg" />
+            <img src="media/thumbnails/1-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
         </a>
-    
-            </div>
-        
+    </div>
         </div>
     <div class="divider">---</div>
         <div class="post" id="1">

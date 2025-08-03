@@ -1331,3 +1331,404 @@ date: 14-07-2025
 ```
 
 I decided to update the interface a bit and refactor the code. I want to make the UI in a retro style and add some pixel art. I created some basic components, chose the fonts, added a built-in debug terminal (I think I will use it to send custom messages to nats) and added a cute loader.
+
+---
+
+```yaml
+id: 123
+date: 16-07-2025
+media:
+  - 123-1.jpg
+```
+
+Today I picked up a package from the US which contained a [ZED 2i stereo camera](https://www.stereolabs.com/en-au/store/products/zed-2i). It looks really awesome. My version has a focal length of 2.1mm, I thought this would be a bit better for indoor use than 4mm. Some interesting features:
+
+-   The SDK does not work in Parallels because it is built only for x86 and does not work on Windows ARM
+-   The SDK needs to be downloaded from the website and it is not in the Python repositories which is not very convenient. To run a simple image capture you also need to work a bit but the good thing is they already have a ready-made Docker image for l4t and Jetpack
+-   It refused to work with any USB cables except the original one and this is really annoying because you debug the software part and only later start thinking about USB cables
+-   I can't say I'm happy with the quality but it has a lot of other advantages, it has IMU, fusion and several other sensors built in and it's pretty easy to work with them
+-   In the end after sitting for 4 hours I got it working and streamed the image and sensor telemetry via nats to the browser
+
+---
+
+```yaml
+id: 124
+date: 16-07-2025
+media:
+  - 124-1.jpg
+```
+
+From other updates I also finally received the 5G gateway. I already took it apart, it's more compact and it's more convenient to mount the board on standoffs on the robot's body. I thought the GNSS and 5G antennas would be included but they were not, so I'll have to order them separately.
+
+---
+
+```yaml
+id: 125
+date: 16-07-2025
+```
+
+How annoying it is that nvidia tests jetpack so badly. Yesterday I finally broke my jetson and decided to flash it again. After an hour the fresh jetpack couldn't launch chrome or any other browser. After a couple of hours talking to chat gpt and claude I got nowhere except installing chrome from flatpak.
+
+I decided to try gemini + deep research this morning and it was just 🔥. The problem is in snap and the simplest way to solve it is to rollback snap to the previous version. This is already the second time when a very simple use case breaks in jetpack and is solved by simply rolling back versions.
+
+---
+
+```yaml
+id: 126
+date: 17-07-2025
+```
+
+On the third try I ordered the correct barrel jack for power and dupont connectors. Quickly crimped them and checked how it works. According to the dev board spec it can be powered with 9-20V. The battery at 96% gives 16.2V which is within the range so it can be powered without step down converters.
+
+---
+
+```yaml
+id: 127
+date: 17-07-2025
+media:
+  - 127-1.jpg
+```
+
+With minimal load in MAXN_SUPER power mode the consumption is no more than 1A. I will try to load it with a camera and see how long it will work on battery alone.
+
+---
+
+```yaml
+id: 128
+date: 17-07-2025
+media:
+  - 128-1.jpg
+```
+
+When installing ZED SDK it decided that it needed to optimize neural depth models which increased the consumption to 7W and 1.4A
+
+---
+
+```yaml
+id: 129
+date: 17-07-2025
+media:
+  - 129-1.mp4
+```
+
+Played a bit with depth estimation.
+
+---
+
+```yaml
+id: 130
+date: 17-07-2025
+media:
+  - 130-1.mp4
+```
+
+There is also an IMU in the camera. Accelerometer gyroscope and magnetometer.
+
+---
+
+```yaml
+id: 131
+date: 17-07-2025
+media:
+  - 131-1.mp4
+```
+
+The SDK has models for building point clouds that will be useful for SLAM (simultaneous localization and mapping) when the robot determines its position and maintains a map of the area.
+
+---
+
+```yaml
+id: 132
+date: 18-07-2025
+```
+
+I tried a few more heavy workloads. Jetson consistently reports “System throttled due to over-current.” I doubt that it’s complaining about too much current caused by turning on the GPU. Most likely this is just a standard protection error and the real problem is under voltage. According to the specs the battery should easily deliver 10A and even more at peak which should be more than enough for the Jetson. The reason could be wires that are too thin and too long. I bought a barrel jack without looking at the cable thickness. They arrived as AWG22 one meter long. The voltage drop in a setup like this when the current spikes can reach up to 1V which will definitely be noticeable and most likely Jetson turns on throttling even though the voltage is technically enough.
+
+On the weekend I’ll try to measure current and voltage at different loads. In the best case I’ll just cut the wires. If it doesn’t help and the reason is really the wires then I’ll have to order a new barrel jack with AWG18 for the fourth time.
+
+---
+
+```yaml
+id: 133
+date: 18-07-2025
+```
+
+There is of course still a chance that the battery specs are lying and in reality it gives out much less. I really don't want this because going back to RC lipo with high current output means dealing with charging, BMS and all sorts of other protections and safety concerns.
+
+---
+
+```yaml
+id: 134
+date: 19-07-2025
+media:
+  - 134-1.mp4
+```
+
+Meditative activity: threading.
+
+---
+
+```yaml
+id: 135
+date: 19-07-2025
+media:
+  - 135-1.jpg
+```
+
+The whole robot assembled will weigh about 3.5kg. That's quite a lot actually.
+
+---
+
+```yaml
+id: 136
+date: 19-07-2025
+media:
+  - 136-1.jpg
+```
+
+Today I stayed at home all day and worked on the robot. After 2 weeks without progress I got excited again and moved forward quite well. I found the optimal component layout to minimize wires and fit everything compactly.
+
+---
+
+```yaml
+id: 137
+date: 19-07-2025
+media:
+  - 137-1.jpg
+  - 137-2.jpg
+  - 137-3.jpg
+```
+
+I couldn't master CAD and decided to draw everything in Figma. Almost all components had datasheets with dimensions but I had to measure some manually to place the holes accurately. Then I went to Denis and printed the layout of the components and holes. I glued it to the sheets that I cut with a laser and drilled the holes.
+
+---
+
+```yaml
+id: 138
+date: 19-07-2025
+media:
+  - 138-1.jpg
+  - 138-2.jpg
+```
+
+After that I cut threads so I wouldn't have to screw nuts from the back side.
+
+---
+
+```yaml
+id: 139
+date: 19-07-2025
+media:
+  - 139-1.jpg
+  - 139-2.jpg
+  - 139-3.jpg
+```
+
+I got this kind of plate with standoffs where I will mount the components.
+
+---
+
+```yaml
+id: 140
+date: 19-07-2025
+media:
+  - 140-1.jpg
+  - 140-2.jpg
+  - 140-3.jpg
+```
+
+With the Jetson it's a bit more complicated because it doesn't have holes on the dev board. I had to drill some holes, I hope I didn't touch anything and it still works.
+
+---
+
+```yaml
+id: 141
+date: 19-07-2025
+media:
+  - 141-1.jpg
+  - 141-2.jpg
+  - 141-3.jpg
+```
+
+Next is the four-channel INA. I will write about it a bit later. Today I soldered 4 shunts of 0.01 Ohm for measuring current and voltage at different nodes.
+
+---
+
+```yaml
+id: 142
+date: 19-07-2025
+media:
+  - 142-1.jpg
+```
+
+Assembled everything together but haven't connected the wires yet. Wanted to see how it would look when assembled. For now without the arm, I'll add it a bit later or maybe postpone it until the next milestone.
+
+---
+
+```yaml
+id: 143
+date: 19-07-2025
+media:
+  - 143-1.jpg
+```
+
+The battery of course makes it a bit hunchbacked and the stereo camera adds some facial expression. With the arm it will look even more amusing. The front is a bit empty for now but the arm controller will go there. In the future there will also be a lidar but that will come a bit later. The problem is that the camera has a depth measurement limit starting from 30cm, so right in front of the robot it has a blind spot. This problem will also need to be solved somehow.
+
+---
+
+```yaml
+id: 144
+date: 19-07-2025
+media:
+  - 144-1.jpg
+```
+
+Slightly reminds me of the robot from the movie "WALL-E". Overall I am happy with how it looks and how everything fits in. Now I need to connect the wires and check that everything works.
+
+---
+
+```yaml
+id: 145
+date: 20-07-2025
+media:
+  - 145-1.jpg
+```
+
+Perfectionism is the main enemy of productivity
+
+---
+
+```yaml
+id: 146
+date: 20-07-2025
+media:
+  - 146-1.jpg
+```
+
+Wired up the rear motor controller, voltage sensor, 2 step down regulators—one for the steering servo, the other for the motors and controller—and started it from the battery. Nothing seems to have started smoking, that's a good sign.
+
+---
+
+```yaml
+id: 147
+date: 21-07-2025
+media:
+  - 147-1.jpg
+```
+
+Today I connected all the wires and components. I had to take it apart and put it back together five times because every time some new crap happened.
+
+On the bright side the battery is really awesome. First of all it can pass current when connected to the charger and it can charge and power the robot at the same time.
+
+---
+
+```yaml
+id: 148
+date: 21-07-2025
+media:
+  - 148-1.mp4
+```
+
+Big milestone. It can move and be controlled remotely.
+
+-   runs on a battery
+-   video is streamed in real-time at 720p@30
+-   controller lag is minimal
+
+Problems:
+
+-   the steering is very twitchy
+-   the gear ratio is too high and the robot is very slow and noisy (bldc?)
+-   video is not compressed with h264, I take each frame and compress it to jpeg which sends a lot of gigabytes, this will not work on 4g
+-   the steering angles are very small, I need to redo the hub and links
+
+---
+
+```yaml
+id: 149
+date: 22-07-2025
+```
+
+Today I caught myself thinking that there are so many cool ideas I want to try implementing but at the same time there is already a lot of technical debt that should really be solved now.
+
+At the very least I want to finish the mechanics right now to move on to perception.
+
+-   redo the steering wheel
+-   strengthen the second floor (cut an acrylic plate with a laser and reassemble it on the new platform)
+-   change the rear motors or raise the axles a bit and buy bigger wheels
+-   adjust the acceleration or distribute the weight better (right now the rabbit jumps a bit when accelerating sharply)
+
+---
+
+```yaml
+id: 150
+date: 22-07-2025
+```
+
+Another disappointment: NVIDIA Jetson Orin Nano does not have hardware h264 compression.
+
+---
+
+```yaml
+id: 151
+date: 22-07-2025
+```
+
+Because of this, the idea leads to several other problems. Initially, I thought about making several nodes that work with the camera. Since only one process can access the camera I thought about local streaming through the ZED SDK. That is, one process connects to the camera and streams a compressed h264 stream. Also, the SDK allows you to read all other parameters through streaming as if you are using the camera locally. But the problem is that streaming through the SDK highly depends on hardware compression and without it crashes and does not work.
+
+---
+
+```yaml
+id: 152
+date: 22-07-2025
+```
+
+Now I have to collapse everything back into a single node that exclusively has access to the camera and does everything.
+
+---
+
+```yaml
+id: 153
+date: 22-07-2025
+media:
+  - 153-1.mp4
+```
+
+I couldn't resist and decided to play with points cloud and depth measurement. For now I tried the simplest model.
+
+What is shown at the bottom of the screen is not SLAM yet but just a stateless point cloud that is published from the robot to nats at 30hz and is rendered in the browser using treejs. The farther the point the closer it is to green. This is just for convenience but in the code it is just a 3 or 4 dimensional matrix (4 if you want to keep the original color from the camera)
+
+What turned out to be difficult is that 1280x720 is too heavy and just a byte blob of this matrix weighs 70+Mb. It is impossible to push such an array 30 times per second because of the 64Mb limit per message and channel bandwidth. After reducing the resolution to 320p and compressing it with zlib I managed to get a couple hundred kilobytes which looks ok. Plus this matrix is sparse so you can drop zeros from it. Although maybe there is no point if you are going to compress it anyway.
+
+---
+
+```yaml
+id: 154
+date: 22-07-2025
+```
+
+measure depth only from 30cm. This creates a blind spot in front of the robot. Tolerable but not very nice. Maybe it's worth considering a lidar or a proximity sensor for obstacle avoidance.
+
+---
+
+```yaml
+id: 155
+date: 22-07-2025
+```
+
+I'm really frustrated that NVIDIA removed the hardware h264 encoder from Jetson even though they position it as an edge AI device with two CSI ports for cameras. With a software codec, CPU load at 1080p@30fps goes up to 40% and power consumption rises a lot.
+
+After studying the topic a bit, I got the impression that Raspberry Pi 5 also lost the hardware encoder because of a chip shortage but rpi4 still has it. By the way, I have one and used it in the robot until I rebuilt it on Jetson. At the same resolution and frame rate, rpi4 draws a bit more than 5W and CPU load is not more than 5% processing the stream with no lags.
+
+Now I'm thinking that offloading Jetson by moving all the blocks for mechanical control and camera streaming from Jetson to rpi and combining them in a cluster is not such a bad idea. It seems that an extra 5W won't make a difference but will free all resources for Huang.
+
+The question comes up how to connect them together since there should be a NATS server running somewhere. Ethernet + mini switch or ethernet over usb?
+
+---
+
+```yaml
+id: 156
+date: 22-07-2025
+```
+
+I decided to quickly put together a blog in English just to have one. I will duplicate all posts from here there. [https://xrabbit.dev](https://xrabbit.dev)

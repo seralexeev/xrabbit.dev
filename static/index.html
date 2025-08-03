@@ -7,7 +7,7 @@
                 <title>🐰 Robot Rabbit</title>
                 <meta
                     name="description"
-                    content="Robot Rabbit: A blog about building an internet-controlled robot with Ackermann steering, ROS2, and autonomous navigation. Follow the journey from hardware to software, including electronics, mechanics, and code."
+                    content="Robot Rabbit: A blog about building a robot with Ackermann steering, ROS2 (NATS), and autonomous navigation. Follow the journey from hardware to software, including electronics, mechanics, and code."
                 />
                 <meta
                     name="keywords"
@@ -18,7 +18,7 @@
                 <meta property="og:title" content="Robot Rabbit" />
                 <meta
                     property="og:description"
-                    content="A blog about building an internet-controlled robot with Ackermann steering, ROS2, and autonomous navigation."
+                    content="A blog about building a robot with Ackermann steering, ROS2 (NATS), and autonomous navigation."
                 />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://xrabbit.dev/" />
@@ -27,7 +27,7 @@
                 <meta name="twitter:title" content="Robot Rabbit" />
                 <meta
                     name="twitter:description"
-                    content="A blog about building an internet-controlled robot with Ackermann steering, ROS2, and autonomous navigation."
+                    content="A blog about building a robot with Ackermann steering, ROS2 (NATS), and autonomous navigation."
                 />
                 <meta name="twitter:image" content="https://xrabbit.dev/media/logo.gif" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -235,6 +235,514 @@
                     </header>
 
                     <div class="post-list">
+        <div class="post" id="156">
+            <div class="post-header">
+                <a href="#156">#156</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>I decided to quickly put together a blog in English just to have one. I will duplicate all posts from here there. <a href="https://xrabbit.dev">https://xrabbit.dev</a></p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="155">
+            <div class="post-header">
+                <a href="#155">#155</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>I&#39;m really frustrated that NVIDIA removed the hardware h264 encoder from Jetson even though they position it as an edge AI device with two CSI ports for cameras. With a software codec, CPU load at 1080p@30fps goes up to 40% and power consumption rises a lot.</p>
+<p>After studying the topic a bit, I got the impression that Raspberry Pi 5 also lost the hardware encoder because of a chip shortage but rpi4 still has it. By the way, I have one and used it in the robot until I rebuilt it on Jetson. At the same resolution and frame rate, rpi4 draws a bit more than 5W and CPU load is not more than 5% processing the stream with no lags.</p>
+<p>Now I&#39;m thinking that offloading Jetson by moving all the blocks for mechanical control and camera streaming from Jetson to rpi and combining them in a cluster is not such a bad idea. It seems that an extra 5W won&#39;t make a difference but will free all resources for Huang.</p>
+<p>The question comes up how to connect them together since there should be a NATS server running somewhere. Ethernet + mini switch or ethernet over usb?</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="154">
+            <div class="post-header">
+                <a href="#154">#154</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>measure depth only from 30cm. This creates a blind spot in front of the robot. Tolerable but not very nice. Maybe it&#39;s worth considering a lidar or a proximity sensor for obstacle avoidance.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="153">
+            <div class="post-header">
+                <a href="#153">#153</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>I couldn&#39;t resist and decided to play with points cloud and depth measurement. For now I tried the simplest model.</p>
+<p>What is shown at the bottom of the screen is not SLAM yet but just a stateless point cloud that is published from the robot to nats at 30hz and is rendered in the browser using treejs. The farther the point the closer it is to green. This is just for convenience but in the code it is just a 3 or 4 dimensional matrix (4 if you want to keep the original color from the camera)</p>
+<p>What turned out to be difficult is that 1280x720 is too heavy and just a byte blob of this matrix weighs 70+Mb. It is impossible to push such an array 30 times per second because of the 64Mb limit per message and channel bandwidth. After reducing the resolution to 320p and compressing it with zlib I managed to get a couple hundred kilobytes which looks ok. Plus this matrix is sparse so you can drop zeros from it. Although maybe there is no point if you are going to compress it anyway.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/153-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/153-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="152">
+            <div class="post-header">
+                <a href="#152">#152</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Now I have to collapse everything back into a single node that exclusively has access to the camera and does everything.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="151">
+            <div class="post-header">
+                <a href="#151">#151</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Because of this, the idea leads to several other problems. Initially, I thought about making several nodes that work with the camera. Since only one process can access the camera I thought about local streaming through the ZED SDK. That is, one process connects to the camera and streams a compressed h264 stream. Also, the SDK allows you to read all other parameters through streaming as if you are using the camera locally. But the problem is that streaming through the SDK highly depends on hardware compression and without it crashes and does not work.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="150">
+            <div class="post-header">
+                <a href="#150">#150</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Another disappointment: NVIDIA Jetson Orin Nano does not have hardware h264 compression.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="149">
+            <div class="post-header">
+                <a href="#149">#149</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Today I caught myself thinking that there are so many cool ideas I want to try implementing but at the same time there is already a lot of technical debt that should really be solved now.</p>
+<p>At the very least I want to finish the mechanics right now to move on to perception.</p>
+<ul>
+<li>redo the steering wheel</li>
+<li>strengthen the second floor (cut an acrylic plate with a laser and reassemble it on the new platform)</li>
+<li>change the rear motors or raise the axles a bit and buy bigger wheels</li>
+<li>adjust the acceleration or distribute the weight better (right now the rabbit jumps a bit when accelerating sharply)</li>
+</ul>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="148">
+            <div class="post-header">
+                <a href="#148">#148</a>
+                <div class="post-meta">21-07-2025</div>
+            </div>
+            <div class="post-body"><p>Big milestone. It can move and be controlled remotely.</p>
+<ul>
+<li>runs on a battery</li>
+<li>video is streamed in real-time at 720p@30</li>
+<li>controller lag is minimal</li>
+</ul>
+<p>Problems:</p>
+<ul>
+<li>the steering is very twitchy</li>
+<li>the gear ratio is too high and the robot is very slow and noisy (bldc?)</li>
+<li>video is not compressed with h264, I take each frame and compress it to jpeg which sends a lot of gigabytes, this will not work on 4g</li>
+<li>the steering angles are very small, I need to redo the hub and links</li>
+</ul>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/148-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/148-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="147">
+            <div class="post-header">
+                <a href="#147">#147</a>
+                <div class="post-meta">21-07-2025</div>
+            </div>
+            <div class="post-body"><p>Today I connected all the wires and components. I had to take it apart and put it back together five times because every time some new crap happened.</p>
+<p>On the bright side the battery is really awesome. First of all it can pass current when connected to the charger and it can charge and power the robot at the same time.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/147-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/147-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="146">
+            <div class="post-header">
+                <a href="#146">#146</a>
+                <div class="post-meta">20-07-2025</div>
+            </div>
+            <div class="post-body"><p>Wired up the rear motor controller, voltage sensor, 2 step down regulators—one for the steering servo, the other for the motors and controller—and started it from the battery. Nothing seems to have started smoking, that&#39;s a good sign.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/146-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/146-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="145">
+            <div class="post-header">
+                <a href="#145">#145</a>
+                <div class="post-meta">20-07-2025</div>
+            </div>
+            <div class="post-body"><p>Perfectionism is the main enemy of productivity</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/145-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/145-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="144">
+            <div class="post-header">
+                <a href="#144">#144</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>Slightly reminds me of the robot from the movie &quot;WALL-E&quot;. Overall I am happy with how it looks and how everything fits in. Now I need to connect the wires and check that everything works.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/144-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/144-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="143">
+            <div class="post-header">
+                <a href="#143">#143</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>The battery of course makes it a bit hunchbacked and the stereo camera adds some facial expression. With the arm it will look even more amusing. The front is a bit empty for now but the arm controller will go there. In the future there will also be a lidar but that will come a bit later. The problem is that the camera has a depth measurement limit starting from 30cm, so right in front of the robot it has a blind spot. This problem will also need to be solved somehow.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/143-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/143-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="142">
+            <div class="post-header">
+                <a href="#142">#142</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>Assembled everything together but haven&#39;t connected the wires yet. Wanted to see how it would look when assembled. For now without the arm, I&#39;ll add it a bit later or maybe postpone it until the next milestone.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/142-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/142-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="141">
+            <div class="post-header">
+                <a href="#141">#141</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>Next is the four-channel INA. I will write about it a bit later. Today I soldered 4 shunts of 0.01 Ohm for measuring current and voltage at different nodes.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/141-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/141-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/141-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/141-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/141-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/141-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="140">
+            <div class="post-header">
+                <a href="#140">#140</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>With the Jetson it&#39;s a bit more complicated because it doesn&#39;t have holes on the dev board. I had to drill some holes, I hope I didn&#39;t touch anything and it still works.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/140-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/140-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/140-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/140-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/140-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/140-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="139">
+            <div class="post-header">
+                <a href="#139">#139</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>I got this kind of plate with standoffs where I will mount the components.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/139-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/139-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/139-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/139-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/139-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/139-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="138">
+            <div class="post-header">
+                <a href="#138">#138</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>After that I cut threads so I wouldn&#39;t have to screw nuts from the back side.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/138-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/138-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/138-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/138-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="137">
+            <div class="post-header">
+                <a href="#137">#137</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>I couldn&#39;t master CAD and decided to draw everything in Figma. Almost all components had datasheets with dimensions but I had to measure some manually to place the holes accurately. Then I went to Denis and printed the layout of the components and holes. I glued it to the sheets that I cut with a laser and drilled the holes.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/137-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/137-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/137-2.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/137-2.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    
+        <a class="media-item" href="media/137-3.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/137-3.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="136">
+            <div class="post-header">
+                <a href="#136">#136</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>Today I stayed at home all day and worked on the robot. After 2 weeks without progress I got excited again and moved forward quite well. I found the optimal component layout to minimize wires and fit everything compactly.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/136-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/136-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="135">
+            <div class="post-header">
+                <a href="#135">#135</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>The whole robot assembled will weigh about 3.5kg. That&#39;s quite a lot actually.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/135-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/135-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="134">
+            <div class="post-header">
+                <a href="#134">#134</a>
+                <div class="post-meta">19-07-2025</div>
+            </div>
+            <div class="post-body"><p>Meditative activity: threading.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/134-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/134-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="133">
+            <div class="post-header">
+                <a href="#133">#133</a>
+                <div class="post-meta">18-07-2025</div>
+            </div>
+            <div class="post-body"><p>There is of course still a chance that the battery specs are lying and in reality it gives out much less. I really don&#39;t want this because going back to RC lipo with high current output means dealing with charging, BMS and all sorts of other protections and safety concerns.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="132">
+            <div class="post-header">
+                <a href="#132">#132</a>
+                <div class="post-meta">18-07-2025</div>
+            </div>
+            <div class="post-body"><p>I tried a few more heavy workloads. Jetson consistently reports “System throttled due to over-current.” I doubt that it’s complaining about too much current caused by turning on the GPU. Most likely this is just a standard protection error and the real problem is under voltage. According to the specs the battery should easily deliver 10A and even more at peak which should be more than enough for the Jetson. The reason could be wires that are too thin and too long. I bought a barrel jack without looking at the cable thickness. They arrived as AWG22 one meter long. The voltage drop in a setup like this when the current spikes can reach up to 1V which will definitely be noticeable and most likely Jetson turns on throttling even though the voltage is technically enough.</p>
+<p>On the weekend I’ll try to measure current and voltage at different loads. In the best case I’ll just cut the wires. If it doesn’t help and the reason is really the wires then I’ll have to order a new barrel jack with AWG18 for the fourth time.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="131">
+            <div class="post-header">
+                <a href="#131">#131</a>
+                <div class="post-meta">17-07-2025</div>
+            </div>
+            <div class="post-body"><p>The SDK has models for building point clouds that will be useful for SLAM (simultaneous localization and mapping) when the robot determines its position and maintains a map of the area.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/131-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/131-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="130">
+            <div class="post-header">
+                <a href="#130">#130</a>
+                <div class="post-meta">17-07-2025</div>
+            </div>
+            <div class="post-body"><p>There is also an IMU in the camera. Accelerometer gyroscope and magnetometer.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/130-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/130-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="129">
+            <div class="post-header">
+                <a href="#129">#129</a>
+                <div class="post-meta">17-07-2025</div>
+            </div>
+            <div class="post-body"><p>Played a bit with depth estimation.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/129-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/129-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="128">
+            <div class="post-header">
+                <a href="#128">#128</a>
+                <div class="post-meta">17-07-2025</div>
+            </div>
+            <div class="post-body"><p>When installing ZED SDK it decided that it needed to optimize neural depth models which increased the consumption to 7W and 1.4A</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/128-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/128-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="127">
+            <div class="post-header">
+                <a href="#127">#127</a>
+                <div class="post-meta">17-07-2025</div>
+            </div>
+            <div class="post-body"><p>With minimal load in MAXN_SUPER power mode the consumption is no more than 1A. I will try to load it with a camera and see how long it will work on battery alone.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/127-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/127-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="126">
+            <div class="post-header">
+                <a href="#126">#126</a>
+                <div class="post-meta">17-07-2025</div>
+            </div>
+            <div class="post-body"><p>On the third try I ordered the correct barrel jack for power and dupont connectors. Quickly crimped them and checked how it works. According to the dev board spec it can be powered with 9-20V. The battery at 96% gives 16.2V which is within the range so it can be powered without step down converters.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="125">
+            <div class="post-header">
+                <a href="#125">#125</a>
+                <div class="post-meta">16-07-2025</div>
+            </div>
+            <div class="post-body"><p>How annoying it is that nvidia tests jetpack so badly. Yesterday I finally broke my jetson and decided to flash it again. After an hour the fresh jetpack couldn&#39;t launch chrome or any other browser. After a couple of hours talking to chat gpt and claude I got nowhere except installing chrome from flatpak.</p>
+<p>I decided to try gemini + deep research this morning and it was just 🔥. The problem is in snap and the simplest way to solve it is to rollback snap to the previous version. This is already the second time when a very simple use case breaks in jetpack and is solved by simply rolling back versions.</p>
+</div>
+            
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="124">
+            <div class="post-header">
+                <a href="#124">#124</a>
+                <div class="post-meta">16-07-2025</div>
+            </div>
+            <div class="post-body"><p>From other updates I also finally received the 5G gateway. I already took it apart, it&#39;s more compact and it&#39;s more convenient to mount the board on standoffs on the robot&#39;s body. I thought the GNSS and 5G antennas would be included but they were not, so I&#39;ll have to order them separately.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/124-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/124-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
+        <div class="post" id="123">
+            <div class="post-header">
+                <a href="#123">#123</a>
+                <div class="post-meta">16-07-2025</div>
+            </div>
+            <div class="post-body"><p>Today I picked up a package from the US which contained a <a href="https://www.stereolabs.com/en-au/store/products/zed-2i">ZED 2i stereo camera</a>. It looks really awesome. My version has a focal length of 2.1mm, I thought this would be a bit better for indoor use than 4mm. Some interesting features:</p>
+<ul>
+<li>The SDK does not work in Parallels because it is built only for x86 and does not work on Windows ARM</li>
+<li>The SDK needs to be downloaded from the website and it is not in the Python repositories which is not very convenient. To run a simple image capture you also need to work a bit but the good thing is they already have a ready-made Docker image for l4t and Jetpack</li>
+<li>It refused to work with any USB cables except the original one and this is really annoying because you debug the software part and only later start thinking about USB cables</li>
+<li>I can&#39;t say I&#39;m happy with the quality but it has a lot of other advantages, it has IMU, fusion and several other sensors built in and it&#39;s pretty easy to work with them</li>
+<li>In the end after sitting for 4 hours I got it working and streamed the image and sensor telemetry via nats to the browser</li>
+</ul>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/123-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/123-1.webp" alt="Preview" height="256" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </div>
+    <div class="divider">---</div>
         <div class="post" id="122">
             <div class="post-header">
                 <a href="#122">#122</a>

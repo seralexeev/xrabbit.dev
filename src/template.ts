@@ -71,6 +71,31 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>🐰 Robot Rabbit</title>
+                <meta
+                    name="description"
+                    content="Robot Rabbit: A blog about building a robot with Ackermann steering, ROS2 (NATS), and autonomous navigation. Follow the journey from hardware to software, including electronics, mechanics, and code."
+                />
+                <meta
+                    name="keywords"
+                    content="robot, robotics, Ackermann, ROS2, Raspberry Pi, Jetson, hardware, electronics, DIY, blog, autonomous, navigation, servo, BLDC, prototype, PCB, software, fullstack"
+                />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://xrabbit.dev/" />
+                <meta property="og:title" content="Robot Rabbit" />
+                <meta
+                    property="og:description"
+                    content="A blog about building a robot with Ackermann steering, ROS2 (NATS), and autonomous navigation."
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://xrabbit.dev/" />
+                <meta property="og:image" content="https://xrabbit.dev/media/logo.gif" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Robot Rabbit" />
+                <meta
+                    name="twitter:description"
+                    content="A blog about building a robot with Ackermann steering, ROS2 (NATS), and autonomous navigation."
+                />
+                <meta name="twitter:image" content="https://xrabbit.dev/media/logo.gif" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
                 <link
@@ -270,7 +295,7 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
             <body>
                 <div class="container">
                     <header>
-                        <img src="./media/logo.gif" />
+                        <img alt="Robot Rabbit" src="./media/logo.gif" />
                         <h1>Robot Rabbit</h1>
                         <span class="translated">(translated from Russian via ChatGPT)</span>
                     </header>

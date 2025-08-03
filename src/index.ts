@@ -46,9 +46,9 @@ const dump_posts = async (file_path: string, posts: { meta: PostMeta; content: s
     await fs.writeFile(file_path, content + '\n', 'utf-8');
 };
 
-const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) => {
+const render_html = async (posts: Array<{ meta: PostMeta; content: string }>, file_name: string) => {
     const result = await Blog({ posts });
-    const output_path = path.join(root, 'static/index.html');
+    const output_path = path.join(root, 'static', file_name);
     await fs.writeFile(output_path, result, 'utf-8');
 };
 
@@ -71,12 +71,22 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
         });
     }
 
-    const items = Array.from(en_posts.values());
+    const en_items = Array.from(en_posts.values());
+    const ru_items = Array.from(ru_posts.values());
 
     await dump_posts(
         path.join(root, 'README.md'),
-        items.sort((a, b) => a.meta.id - b.meta.id),
+        en_items.sort((a, b) => a.meta.id - b.meta.id),
     );
-    await render_html(items.sort((a, b) => b.meta.id - a.meta.id));
+
+    await render_html(
+        en_items.sort((a, b) => b.meta.id - a.meta.id),
+        'index.html',
+    );
+
+    await render_html(
+        ru_items.sort((a, b) => b.meta.id - a.meta.id),
+        'ru.html',
+    );
 })();
 export { PostMeta };

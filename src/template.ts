@@ -296,6 +296,8 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                         font-size: 12px;
                         text-align: right;
                         margin-top: 4px;
+                        display: flex;
+                        justify-content: space-between;
                     }
                 </style>
             </head>
@@ -304,7 +306,10 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                     <header>
                         <img alt="Robot Rabbit" src="./media/logo.gif" />
                         <h1>Robot Rabbit</h1>
-                        <div class="translated">translated from Russian via ChatGPT</div>
+                        <div class="translated">
+                            <span>translated from Russian via ChatGPT</span>
+                            <span><a href="/ru">RU</a> <a href="/">EN</a></span>
+                        </div>
                     </header>
 
                     <div class="post-list">${rendered_posts.join(divider)}</div>

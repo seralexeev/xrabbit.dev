@@ -933,3 +933,401 @@ media:
 ```
 
 Short dupont wires and multicolored pins have also arrived. I can't wait to start assembling version 0.0.2
+
+---
+
+```yaml
+id: 90
+date: 17-06-2025
+media:
+  - media/90-1.jpeg
+```
+
+It also continued with the barrel jack for powering the jetson. The diameter was wrong 🤦‍♂️
+
+---
+
+```yaml
+id: 91
+date: 17-06-2025
+media:
+  - media/91-1.jpeg
+```
+
+Of the more interesting things - ina226 i2c. Simply put a voltage sensor to read voltage and current over i2c and display the voltage on the robot dashboard. There is never too much telemetry.
+
+---
+
+```yaml
+id: 92
+date: 17-06-2025
+media:
+  - media/92-1.jpeg
+```
+
+Since i2c supports addressing you can simply parallel the pins by changing the device addresses. For this there is such a small and handy 10 channel device.
+
+---
+
+```yaml
+id: 93
+date: 17-06-2025
+media:
+  - media/93-1.jpeg
+```
+
+And finally the ball rod ends for the steering link have arrived. The link itself and the hubs haven't arrived yet. I don't remember if I wrote about it or not but I want to replace all the plastic parts with these metal upgrades.
+
+---
+
+```yaml
+id: 94
+date: 17-06-2025
+media:
+  - media/94-1.jpeg
+```
+
+And finally - metal cutting discs and taps for threading. I will try to place all the electronics compactly and securely.
+
+---
+
+```yaml
+id: 95
+date: 17-06-2025
+media:
+  - media/95-1.jpeg
+```
+
+It seems it's time to take apart the first prototype and start assembling a new v0.0.2
+
+---
+
+```yaml
+id: 96
+date: 17-06-2025
+media:
+  - media/96-1.jpeg
+  - media/96-2.jpeg
+  - media/96-3.jpeg
+  - media/96-4.jpeg
+  - media/96-5.jpeg
+  - media/96-6.jpeg
+```
+
+Disassembled the robot completely and started assembling the arm
+
+---
+
+```yaml
+id: 97
+date: 18-06-2025
+media:
+  - media/97-1.jpeg
+  - media/97-2.jpeg
+```
+
+I was very lucky that the holes on the metal plate almost perfectly matched the v plate. The only thing I did for reliability was drill a couple of M4 holes.
+
+---
+
+```yaml
+id: 98
+date: 18-06-2025
+media:
+  - media/98-1.mp4
+```
+
+Here is how it looks at first approximation. I will trim the base a bit later so the corners won't stick out so much.
+
+---
+
+```yaml
+id: 99
+date: 18-06-2025
+media:
+  - media/99-1.jpeg
+  - media/99-2.jpeg
+  - media/99-3.jpeg
+  - media/99-4.jpeg
+  - media/99-5.jpeg
+```
+
+Next I want to place all the boards on acrylic plates. I cut the needed shape with a jigsaw drilled holes and cut threads to screw in the standoffs.
+
+---
+
+```yaml
+id: 100
+date: 18-06-2025
+media:
+  - media/100-1.jpeg
+```
+
+That's all for today, this is how it looks so far but there will also be an intermediate level where the nvidia jetson and a couple of other boards will be located.
+
+---
+
+```yaml
+id: 101
+date: 19-06-2025
+media:
+  - media/101-1.jpeg
+  - media/101-2.jpeg
+  - media/101-3.jpeg
+```
+
+Replaced the plastic steering hubs with aluminum ones and matched the color to the mechanical arm.
+
+---
+
+```yaml
+id: 102
+date: 25-06-2025
+media:
+  - media/102-1.jpeg
+```
+
+Somehow I don't really like how cutting acrylic sheets with a jigsaw turns out. I decided to try ordering laser cutting.
+
+---
+
+```yaml
+id: 103
+date: 25-06-2025
+media:
+  - media/103-1.mp4
+```
+
+Bought a mini drill to quickly drill holes.
+
+---
+
+```yaml
+id: 104
+date: 25-06-2025
+media:
+  - media/104-1.jpeg
+  - media/104-2.jpeg
+```
+
+Lithium grease has arrived. Lubricated all moving parts.
+
+---
+
+```yaml
+id: 105
+date: 25-06-2025
+media:
+  - media/105-1.jpeg
+  - media/105-2.jpeg
+  - media/105-3.jpeg
+```
+
+Tried to connect the rpi camera with jetson but nothing worked out. Well, it's okay, I'll wait for the zed and then I'll do it properly.
+
+---
+
+```yaml
+id: 106
+date: 25-06-2025
+media:
+  - media/106-1.jpeg
+  - media/106-2.jpeg
+  - media/106-3.jpeg
+  - media/106-4.jpeg
+```
+
+Today I also picked up the laser cut acrylic. It turned out perfect and very neat. For this version I will drill the holes by hand and for the next version I will draw all the holes in CAD so everything will be perfect.
+
+---
+
+```yaml
+id: 107
+date: 25-06-2025
+media:
+  - media/107-1.jpeg
+  - media/107-2.jpeg
+  - media/107-3.jpeg
+```
+
+Placed all the boards on the acrylic and fixed some of them on standoffs. Looks like everything fits but I still need to think about the layout.
+
+---
+
+```yaml
+id: 108
+date: 26-06-2025
+```
+
+I need to write setup.sh to bootstrap the robot from scratch. I won't be able to set up ssh, wg and all the packages for the fourth time.
+
+---
+
+```yaml
+id: 109
+date: 27-06-2025
+```
+
+Ordered new ones from Amazon in the right size. A few days later they arrived in the same size🤦‍♂️ how does this even happen?
+
+---
+
+```yaml
+id: 110
+date: 28-06-2025
+```
+
+Read: [Depth accuracy analysis of the ZED 2i Stereo Camera in an indoor Environment](https://www.sciencedirect.com/science/article/pii/S0921889024001374)
+
+---
+
+```yaml
+id: 111
+date: 29-06-2025
+media:
+  - media/111-1.jpeg
+  - media/111-2.jpeg
+```
+
+Figured out how ina226 works - a current sensor that can be read via i2c. Everything is quite simple but by default the Chinese breakout board comes with an R100 shunt which is too much for measuring currents higher than 819.175 mA. Although the power is enough and nothing will break the data will be cut off. But this is very easy to fix by replacing the shunt with an R010 (mΩ). After this you can measure currents up to 8.2A but with lower accuracy. This is of course overkill but 0.8A is too little as well. Ordered R010 2512 (in SMD form factor) on Aliexpress because as usual there is nothing in jaycar.
+
+---
+
+```yaml
+id: 112
+date: 29-06-2025
+```
+
+I want 4 of these sensors. One between the robot and the battery and 3 others after the step down DC converters:
+
+-   rear motors
+-   nvidia jetson
+-   all servo drives (the arm and steering) but maybe I will split them later
+
+4 sensors and all of them by default have the same i2c address. You can change this by soldering jumpers on the breakout board. But I don't really like that. So I bought an i2c multiplexer. At first I thought that this multiplexer works like a router and supports virtual addresses. That is for example the multiplexer itself has address 0x40 and supports its own internal virtual address space and allows you to connect chips with the same names by accessing them via the index of pin groups and at the same time you can read and write to all devices at once. But it doesn't work like that. Basically it's just an 8-channel switch that you can switch programmatically. But that's not a problem because reading from all the sensors can be easily implemented by a loop that goes through all enabled channels reads the data from the same address and writes to a ros2 topic and then to influxdb. All of this is about 20 lines in python and you can run it in a separate docker container.
+
+---
+
+```yaml
+id: 113
+date: 29-06-2025
+```
+
+At the same time, the steering servo is connected via PCA9685 and directly to the jetson pins. But I don't really want to solder a lot of wires so I bought an i2c expansion board. It's convenient, I'll also add i2c. Plus the ground rail turned out to be very handy to connect all the GND together on all the boards.
+
+---
+
+```yaml
+id: 114
+date: 29-06-2025
+media:
+  - media/114-1.jpeg
+  - media/114-2.jpeg
+  - media/114-3.jpeg
+```
+
+That's all for today. It still doesn't drive yet but it seems that the next milestone is already in sight.
+
+---
+
+```yaml
+id: 115
+date: 03-07-2025
+```
+
+I understand this author: [My Problems with ROS 2 and Why I’m Going My Own Way (and Salty About It)](https://medium.com/@forrestallison/my-problems-with-ros2-and-why-im-going-my-own-way-and-salty-about-it-4802146eca89)
+
+---
+
+```yaml
+id: 116
+date: 06-07-2025
+```
+
+The fun begins with the jetson orin nano. The fresh docker does not work and fails with the error:
+
+```
+failed to solve: process "/bin/sh -c uv sync" did not complete successfully: failed to create endpoint laixim2p0a4udq2v8p15ez4p2 on network bridge: Unable to enable DIRECT ACCESS FILTERING - DROP rule:  (iptables failed: iptables --wait -t raw -A PREROUTING -d 172.17.0.2 ! -i docker0 -j DROP: iptables v1.8.7 (legacy): can't initialize iptables table `raw': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.
+```
+
+https://forums.developer.nvidia.com/t/iptables-error-message/333007
+
+They suggest
+
+> downgrade the docker to avoid the error
+
+---
+
+```yaml
+id: 117
+date: 07-07-2025
+```
+
+After about a week of studying ROS2 both as a framework and an ecosystem I gave up and put it aside for now. I am surprised how this became the industry standard. I tried to separate the feelings I had from rejecting something new from the real difficulties that beginners face when learning ROS2.
+
+It is so clunky and boilerplate-heavy that it makes you feel sick. Sure, ecosystem, contracts, approaches, blah blah blah. But I do not see any reason to use it except for learning purposes and adding a line to your resume.
+
+---
+
+```yaml
+id: 118
+date: 07-07-2025
+```
+
+Maybe someday I will formulate my thoughts and try to describe all my complaints about it as neutrally as possible but for now I am too lazy.
+
+Yesterday I completely deleted from the repository all the code that I and the llm wrote in a week (several thousand lines).
+
+---
+
+```yaml
+id: 119
+date: 07-07-2025
+```
+
+I took a breath of fresh air and switched completely to nats. This gave me:
+
+-   got rid of webrtc (that's a huge chunk)
+-   signaling server for webrtc
+-   ros2 (a ton of code)
+-   weird build scripts needed to run ros2 in docker and locally
+
+-   now the client has websocket and nats
+-   access to all topics on the client
+-   no building of custom messages
+-   video is sent as frames in separate messages
+-   everything works great in docker and is monitored with standard tools like prometheus and influxdb
+-   robot nodes in any language including typescript
+-   code is much less, there are no strange auto-generated files, everything is clean and tidy
+-   dropping ros2 turned out to be the best decision
+-   almost all image processing, slam and navigation libraries are available as libraries and not tied to ros2 so nothing stops you from using them
+
+-   on the downside I had to give up foxglove but I think I’ll try to write a bridge for it
+
+---
+
+```yaml
+id: 120
+date: 07-07-2025
+```
+
+After a couple of days I spent with nats I am excited about it. It's so simple, lightweight and convenient that I don't understand how I haven't come across it until now. I have a feeling that it's like nginx from the pubsub world.
+
+---
+
+```yaml
+id: 121
+date: 07-07-2025
+```
+
+Plus for sensors and telemetry nats -> telegraf -> influxdb -> grafana is just insanely simple
+
+---
+
+```yaml
+id: 122
+date: 14-07-2025
+```
+
+I decided to update the interface a bit and refactor the code. I want to make the UI in a retro style and add some pixel art. I created some basic components, chose the fonts, added a built-in debug terminal (I think I will use it to send custom messages to nats) and added a cute loader.

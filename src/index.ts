@@ -57,8 +57,10 @@ const render_html = async (posts: Array<{ meta: PostMeta; content: string }>) =>
     const en_posts = await read_markdown_file(path.join(root, 'README.md'));
 
     for (const [id, post] of ru_posts) {
-        if (en_posts.has(id)) {
+        const en_post = en_posts.get(id);
+        if (en_post != null) {
             console.log(`⚪ ${id} - already exists in English`);
+            en_post.meta = post.meta; // Update metadata if needed
             continue;
         }
 

@@ -9,7 +9,7 @@ const Image = ({ media_name }: { media_name: path.ParsedPath }) => {
 
     return html`
         <a class="media-item" href="${original_name}" target="_blank" rel="noopener noreferrer">
-            <img src="${preview_name}" alt="Preview" height="256" loading="lazy" decoding="async" />
+            <img src="${preview_name}" alt="Preview" loading="lazy" decoding="async" />
         </a>
     `;
 };
@@ -21,7 +21,7 @@ const Video = ({ media_name }: { media_name: path.ParsedPath }) => {
     return html`
         <a class="media-item" href="${original_name}" target="_blank" rel="noopener noreferrer">
             <div class="video-overlay">Click to Play</div>
-            <img src="${preview_name}" alt="Preview" height="256" loading="lazy" decoding="async" />
+            <img src="${preview_name}" alt="Preview" loading="lazy" decoding="async" />
         </a>
     `;
 };
@@ -202,7 +202,6 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                         border: none;
                         background: var(--color-black);
                         width: 100%;
-                        height: 256px;
                         overflow: hidden;
                         position: relative;
                     }

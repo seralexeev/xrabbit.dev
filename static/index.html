@@ -88,12 +88,21 @@
                     }
 
                     header {
-                        margin-bottom: 20px;
+                        margin-bottom: 48px;
+                    }
+
+                    footer {
+                        margin: 48px 0;
+                        text-align: center;
+                        font-size: 14px;
                     }
 
                     h1 {
                         font-size: 24px;
                         font-weight: normal;
+                        background: var(--color-black);
+                        color: var(--color-green);
+                        margin-top: 2px;
                     }
 
                     header img {
@@ -138,6 +147,8 @@
                         width: 100%;
                         overflow: hidden;
                         position: relative;
+                        max-height: 512px;
+                        border-radius: 4px;
                     }
 
                     .media-item img,
@@ -220,8 +231,9 @@
 
                     .translated {
                         color: var(--color-gray);
-                        font-style: italic;
                         font-size: 12px;
+                        text-align: right;
+                        margin-top: 4px;
                     }
                 </style>
             </head>
@@ -230,11 +242,11 @@
                     <header>
                         <img alt="Robot Rabbit" src="./media/logo.gif" />
                         <h1>Robot Rabbit</h1>
-                        <span class="translated">(translated from Russian via ChatGPT)</span>
+                        <div class="translated">translated from Russian via ChatGPT</div>
                     </header>
 
                     <div class="post-list">
-        <div class="post" id="156">
+        <article class="post" id="156">
             <div class="post-header">
                 <a href="#156">#156</a>
                 <div class="post-meta">22-07-2025</div>
@@ -242,9 +254,9 @@
             <div class="post-body"><p>Decided to quickly throw together a blog in English just to have one. I&#39;ll repost all the posts from here there. <a href="https://xrabbit.dev">https://xrabbit.dev</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="155">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="155">
             <div class="post-header">
                 <a href="#155">#155</a>
                 <div class="post-meta">22-07-2025</div>
@@ -255,9 +267,9 @@
 <p>Now there&#39;s the question of how to connect them together since a NATS server needs to run somewhere. Ethernet + a mini switch or ethernet over usb?</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="154">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="154">
             <div class="post-header">
                 <a href="#154">#154</a>
                 <div class="post-meta">22-07-2025</div>
@@ -265,9 +277,9 @@
             <div class="post-body"><p>measure depth only from 30cm. This creates a blind spot in front of the robot. Tolerable but not very nice. Maybe it&#39;s worth thinking about lidar or a proximity sensor for obstacle avoidance.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="153">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="153">
             <div class="post-header">
                 <a href="#153">#153</a>
                 <div class="post-meta">22-07-2025</div>
@@ -282,9 +294,9 @@
             <img src="media/thumbnails/153-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="152">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="152">
             <div class="post-header">
                 <a href="#152">#152</a>
                 <div class="post-meta">22-07-2025</div>
@@ -292,9 +304,9 @@
             <div class="post-body"><p>Now I have to squash everything back into a single node that exclusively has access to the camera and does everything.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="151">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="151">
             <div class="post-header">
                 <a href="#151">#151</a>
                 <div class="post-meta">22-07-2025</div>
@@ -302,9 +314,9 @@
             <div class="post-body"><p>Because of this, the idea brings a few other problems. At first, I thought about making several nodes that work with the camera. Since only one process can access the camera, I thought about local streaming through the ZED SDK. So, one process connects to the camera and streams a compressed h264 stream. The SDK also allows you to read other parameters through streaming as if you’re using the camera locally. But the problem is the streaming in the SDK really depends on hardware encoding and without it everything crashes and doesn’t work.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="150">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="150">
             <div class="post-header">
                 <a href="#150">#150</a>
                 <div class="post-meta">22-07-2025</div>
@@ -312,9 +324,9 @@
             <div class="post-body"><p>Another disappointment: the NVIDIA Jetson Orin nano doesn&#39;t have hardware h264 encoding.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="149">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="149">
             <div class="post-header">
                 <a href="#149">#149</a>
                 <div class="post-meta">22-07-2025</div>
@@ -329,9 +341,9 @@
 </ul>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="148">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="148">
             <div class="post-header">
                 <a href="#148">#148</a>
                 <div class="post-meta">21-07-2025</div>
@@ -356,9 +368,9 @@
             <img src="media/thumbnails/148-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="147">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="147">
             <div class="post-header">
                 <a href="#147">#147</a>
                 <div class="post-meta">21-07-2025</div>
@@ -371,9 +383,9 @@
             <img src="media/thumbnails/147-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="146">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="146">
             <div class="post-header">
                 <a href="#146">#146</a>
                 <div class="post-meta">20-07-2025</div>
@@ -385,9 +397,9 @@
             <img src="media/thumbnails/146-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="145">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="145">
             <div class="post-header">
                 <a href="#145">#145</a>
                 <div class="post-meta">20-07-2025</div>
@@ -399,9 +411,9 @@
             <img src="media/thumbnails/145-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="144">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="144">
             <div class="post-header">
                 <a href="#144">#144</a>
                 <div class="post-meta">19-07-2025</div>
@@ -413,9 +425,9 @@
             <img src="media/thumbnails/144-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="143">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="143">
             <div class="post-header">
                 <a href="#143">#143</a>
                 <div class="post-meta">19-07-2025</div>
@@ -447,9 +459,9 @@
             <img src="media/thumbnails/143-6.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="142">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="142">
             <div class="post-header">
                 <a href="#142">#142</a>
                 <div class="post-meta">19-07-2025</div>
@@ -461,9 +473,9 @@
             <img src="media/thumbnails/142-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="141">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="141">
             <div class="post-header">
                 <a href="#141">#141</a>
                 <div class="post-meta">19-07-2025</div>
@@ -483,9 +495,9 @@
             <img src="media/thumbnails/141-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="140">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="140">
             <div class="post-header">
                 <a href="#140">#140</a>
                 <div class="post-meta">19-07-2025</div>
@@ -505,9 +517,9 @@
             <img src="media/thumbnails/140-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="139">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="139">
             <div class="post-header">
                 <a href="#139">#139</a>
                 <div class="post-meta">19-07-2025</div>
@@ -527,9 +539,9 @@
             <img src="media/thumbnails/139-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="138">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="138">
             <div class="post-header">
                 <a href="#138">#138</a>
                 <div class="post-meta">19-07-2025</div>
@@ -545,9 +557,9 @@
             <img src="media/thumbnails/138-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="137">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="137">
             <div class="post-header">
                 <a href="#137">#137</a>
                 <div class="post-meta">19-07-2025</div>
@@ -567,9 +579,9 @@
             <img src="media/thumbnails/137-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="136">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="136">
             <div class="post-header">
                 <a href="#136">#136</a>
                 <div class="post-meta">19-07-2025</div>
@@ -581,9 +593,9 @@
             <img src="media/thumbnails/136-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="135">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="135">
             <div class="post-header">
                 <a href="#135">#135</a>
                 <div class="post-meta">19-07-2025</div>
@@ -595,9 +607,9 @@
             <img src="media/thumbnails/135-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="134">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="134">
             <div class="post-header">
                 <a href="#134">#134</a>
                 <div class="post-meta">19-07-2025</div>
@@ -610,9 +622,9 @@
             <img src="media/thumbnails/134-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="133">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="133">
             <div class="post-header">
                 <a href="#133">#133</a>
                 <div class="post-meta">18-07-2025</div>
@@ -620,9 +632,9 @@
             <div class="post-body"><p>There’s still a chance the battery specs are lying and in reality it gives out a lot less. Really don’t want that because going back to RC lipo with high current output means messing with charging, BMS and all sorts of other protections and safety stuff.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="132">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="132">
             <div class="post-header">
                 <a href="#132">#132</a>
                 <div class="post-meta">18-07-2025</div>
@@ -631,9 +643,9 @@
 <p>On the weekend I’ll try to measure current and voltage under different loads. In the best case I’ll just cut the wires. If that doesn’t help and the wires really are the problem, I’ll have to order a new barrel jack with AWG18 for the fourth time.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="131">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="131">
             <div class="post-header">
                 <a href="#131">#131</a>
                 <div class="post-meta">17-07-2025</div>
@@ -646,9 +658,9 @@
             <img src="media/thumbnails/131-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="130">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="130">
             <div class="post-header">
                 <a href="#130">#130</a>
                 <div class="post-meta">17-07-2025</div>
@@ -661,9 +673,9 @@
             <img src="media/thumbnails/130-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="129">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="129">
             <div class="post-header">
                 <a href="#129">#129</a>
                 <div class="post-meta">17-07-2025</div>
@@ -676,9 +688,9 @@
             <img src="media/thumbnails/129-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="128">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="128">
             <div class="post-header">
                 <a href="#128">#128</a>
                 <div class="post-meta">17-07-2025</div>
@@ -690,9 +702,9 @@
             <img src="media/thumbnails/128-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="127">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="127">
             <div class="post-header">
                 <a href="#127">#127</a>
                 <div class="post-meta">17-07-2025</div>
@@ -704,9 +716,9 @@
             <img src="media/thumbnails/127-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="126">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="126">
             <div class="post-header">
                 <a href="#126">#126</a>
                 <div class="post-meta">17-07-2025</div>
@@ -714,9 +726,9 @@
             <div class="post-body"><p>On the third try I ordered the right barrel jack for power and dupont connectors. Crimped everything quickly and checked if it works. According to the dev board specs, it can be powered by 9-20V. The battery at 96% gives 16.2V which is within the limits so I can power it without step down converters.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="125">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="125">
             <div class="post-header">
                 <a href="#125">#125</a>
                 <div class="post-meta">16-07-2025</div>
@@ -724,10 +736,14 @@
             <div class="post-body"><p>It’s so annoying how badly nvidia tests jetpack. Yesterday I finally broke my jetson and decided to reflash it from scratch. After an hour the fresh jetpack couldn’t launch chrome or any other browser. After a couple hours chatting with chat gpt and claude, all I got was installing chrome from flatpak.</p>
 <p>This morning I decided to try gemini + deep research and it was straight 🔥. The problem is in snap and the simplest way to fix it is to roll snap back one version. This is already the second time when a really basic use case breaks in jetpack and gets fixed by just rolling back versions.</p>
 </div>
-            
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="124">
+            <div class="post-media">
+        <a class="media-item" href="media/125-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/125-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="124">
             <div class="post-header">
                 <a href="#124">#124</a>
                 <div class="post-meta">16-07-2025</div>
@@ -739,9 +755,9 @@
             <img src="media/thumbnails/124-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="123">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="123">
             <div class="post-header">
                 <a href="#123">#123</a>
                 <div class="post-meta">16-07-2025</div>
@@ -760,9 +776,9 @@
             <img src="media/thumbnails/123-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="122">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="122">
             <div class="post-header">
                 <a href="#122">#122</a>
                 <div class="post-meta">14-07-2025</div>
@@ -779,9 +795,9 @@
             <img src="media/thumbnails/122-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="121">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="121">
             <div class="post-header">
                 <a href="#121">#121</a>
                 <div class="post-meta">07-07-2025</div>
@@ -789,9 +805,9 @@
             <div class="post-body"><p>Plus for sensors and telemetry nats -&gt; telegraf -&gt; influxdb -&gt; grafana is just insanely simple</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="120">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="120">
             <div class="post-header">
                 <a href="#120">#120</a>
                 <div class="post-meta">07-07-2025</div>
@@ -799,9 +815,9 @@
             <div class="post-body"><p>After a couple of days spent with nats, I&#39;m thrilled with it. It&#39;s so simple, lightweight and convenient that I don&#39;t get how I hadn&#39;t come across it before. Feels like it&#39;s the nginx of the pubsub world.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="119">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="119">
             <div class="post-header">
                 <a href="#119">#119</a>
                 <div class="post-meta">07-07-2025</div>
@@ -839,9 +855,9 @@
 </ul>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="118">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="118">
             <div class="post-header">
                 <a href="#118">#118</a>
                 <div class="post-meta">07-07-2025</div>
@@ -850,9 +866,9 @@
 <p>Yesterday I completely deleted from the repository all the code that me and the LLM wrote in a week (a few thousand lines).</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="117">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="117">
             <div class="post-header">
                 <a href="#117">#117</a>
                 <div class="post-meta">07-07-2025</div>
@@ -861,9 +877,9 @@
 <p>It’s so clunky and boilerplate-heavy it makes you feel sick. Sure, the ecosystem, contracts, approaches blah blah blah. But I don’t see a single reason to use it except for learning or adding a line to your resume.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="116">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="116">
             <div class="post-header">
                 <a href="#116">#116</a>
                 <div class="post-meta">06-07-2025</div>
@@ -879,9 +895,9 @@ Perhaps iptables or your kernel needs to be upgraded.
 </blockquote>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="115">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="115">
             <div class="post-header">
                 <a href="#115">#115</a>
                 <div class="post-meta">03-07-2025</div>
@@ -889,9 +905,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I understand this author: <a href="https://medium.com/@forrestallison/my-problems-with-ros2-and-why-im-going-my-own-way-and-salty-about-it-4802146eca89">My Problems with ROS 2 and Why I’m Going My Own Way (and Salty About It)</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="114">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="114">
             <div class="post-header">
                 <a href="#114">#114</a>
                 <div class="post-meta">29-06-2025</div>
@@ -911,19 +927,23 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/114-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="113">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="113">
             <div class="post-header">
                 <a href="#113">#113</a>
                 <div class="post-meta">29-06-2025</div>
             </div>
             <div class="post-body"><p>At the same time, the steering servo is connected through PCA9685 and directly to the jetson pins. But I don&#39;t really want to solder a bunch of wires so I bought an i2c expansion board. It&#39;s convenient, I&#39;ll add more i2c too. Plus, the ground pin header turned out to be super handy for tying all the GNDs together on all the boards.</p>
 </div>
-            
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="112">
+            <div class="post-media">
+        <a class="media-item" href="media/113-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/113-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="112">
             <div class="post-header">
                 <a href="#112">#112</a>
                 <div class="post-meta">29-06-2025</div>
@@ -937,9 +957,9 @@ Perhaps iptables or your kernel needs to be upgraded.
 <p>4 sensors and they all have the same i2c address by default. You can change this by soldering jumpers on the breakout board. But I&#39;m not a big fan of that. So I bought an i2c multiplexer. At first I thought this multiplexer worked like a router and supported virtual addresses. Like for example the multiplexer itself has address 0x40 and supports an internal virtual address space and lets you connect chips with the same names and access them by pin group indexes, so you can write and read from all devices at the same time. But it doesn&#39;t work like that. Basically it&#39;s just an 8-channel switch you can toggle in software. But that&#39;s not really a problem because reading from all the sensors can be done very simply with a loop that goes through all the enabled channels, reads data from the same address and writes it to a ros2 topic and then to influxdb. All that is around 20 lines in Python and can run in a separate docker container.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="111">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="111">
             <div class="post-header">
                 <a href="#111">#111</a>
                 <div class="post-meta">29-06-2025</div>
@@ -955,9 +975,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/111-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="110">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="110">
             <div class="post-header">
                 <a href="#110">#110</a>
                 <div class="post-meta">28-06-2025</div>
@@ -965,9 +985,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Read: <a href="https://www.sciencedirect.com/science/article/pii/S0921889024001374">Depth accuracy analysis of the ZED 2i Stereo Camera in an indoor Environment</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="109">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="109">
             <div class="post-header">
                 <a href="#109">#109</a>
                 <div class="post-meta">27-06-2025</div>
@@ -975,9 +995,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Ordered new ones from Amazon in the right size. A few days later they showed up in the same size🤦‍♂️ how does that even happen?</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="108">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="108">
             <div class="post-header">
                 <a href="#108">#108</a>
                 <div class="post-meta">26-06-2025</div>
@@ -985,9 +1005,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I need to write setup.sh to bootstrap the robot from scratch. I can&#39;t handle setting up ssh, wg and all the packages for the fourth time.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="107">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="107">
             <div class="post-header">
                 <a href="#107">#107</a>
                 <div class="post-meta">25-06-2025</div>
@@ -1007,9 +1027,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/107-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="106">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="106">
             <div class="post-header">
                 <a href="#106">#106</a>
                 <div class="post-meta">25-06-2025</div>
@@ -1033,9 +1053,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/106-4.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="105">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="105">
             <div class="post-header">
                 <a href="#105">#105</a>
                 <div class="post-meta">25-06-2025</div>
@@ -1055,9 +1075,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/105-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="104">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="104">
             <div class="post-header">
                 <a href="#104">#104</a>
                 <div class="post-meta">25-06-2025</div>
@@ -1073,9 +1093,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/104-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="103">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="103">
             <div class="post-header">
                 <a href="#103">#103</a>
                 <div class="post-meta">25-06-2025</div>
@@ -1088,9 +1108,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/103-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="102">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="102">
             <div class="post-header">
                 <a href="#102">#102</a>
                 <div class="post-meta">25-06-2025</div>
@@ -1102,9 +1122,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/102-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="101">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="101">
             <div class="post-header">
                 <a href="#101">#101</a>
                 <div class="post-meta">19-06-2025</div>
@@ -1124,9 +1144,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/101-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="100">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="100">
             <div class="post-header">
                 <a href="#100">#100</a>
                 <div class="post-meta">18-06-2025</div>
@@ -1138,9 +1158,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/100-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="99">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="99">
             <div class="post-header">
                 <a href="#99">#99</a>
                 <div class="post-meta">18-06-2025</div>
@@ -1168,9 +1188,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/99-5.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="98">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="98">
             <div class="post-header">
                 <a href="#98">#98</a>
                 <div class="post-meta">18-06-2025</div>
@@ -1183,9 +1203,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/98-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="97">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="97">
             <div class="post-header">
                 <a href="#97">#97</a>
                 <div class="post-meta">18-06-2025</div>
@@ -1201,9 +1221,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/97-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="96">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="96">
             <div class="post-header">
                 <a href="#96">#96</a>
                 <div class="post-meta">18-06-2025</div>
@@ -1235,9 +1255,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/96-6.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="95">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="95">
             <div class="post-header">
                 <a href="#95">#95</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1249,9 +1269,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/95-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="94">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="94">
             <div class="post-header">
                 <a href="#94">#94</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1263,9 +1283,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/94-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="93">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="93">
             <div class="post-header">
                 <a href="#93">#93</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1277,9 +1297,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/93-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="92">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="92">
             <div class="post-header">
                 <a href="#92">#92</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1291,9 +1311,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/92-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="91">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="91">
             <div class="post-header">
                 <a href="#91">#91</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1305,9 +1325,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/91-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="90">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="90">
             <div class="post-header">
                 <a href="#90">#90</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1319,9 +1339,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/90-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="89">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="89">
             <div class="post-header">
                 <a href="#89">#89</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1333,9 +1353,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/89-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="88">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="88">
             <div class="post-header">
                 <a href="#88">#88</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1347,9 +1367,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/88-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="87">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="87">
             <div class="post-header">
                 <a href="#87">#87</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1361,9 +1381,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/87-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="86">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="86">
             <div class="post-header">
                 <a href="#86">#86</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1375,9 +1395,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/86-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="85">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="85">
             <div class="post-header">
                 <a href="#85">#85</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1389,9 +1409,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/85-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="84">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="84">
             <div class="post-header">
                 <a href="#84">#84</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1403,9 +1423,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/84-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="83">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="83">
             <div class="post-header">
                 <a href="#83">#83</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1417,9 +1437,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/83-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="82">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="82">
             <div class="post-header">
                 <a href="#82">#82</a>
                 <div class="post-meta">17-06-2025</div>
@@ -1433,9 +1453,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/82-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="81">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="81">
             <div class="post-header">
                 <a href="#81">#81</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1448,9 +1468,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/81-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="80">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="80">
             <div class="post-header">
                 <a href="#80">#80</a>
                 <div class="post-meta">16-06-2025</div>
@@ -1462,9 +1482,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/80-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="79">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="79">
             <div class="post-header">
                 <a href="#79">#79</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1476,9 +1496,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/79-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="78">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="78">
             <div class="post-header">
                 <a href="#78">#78</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1494,9 +1514,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/78-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="77">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="77">
             <div class="post-header">
                 <a href="#77">#77</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1516,9 +1536,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/77-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="76">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="76">
             <div class="post-header">
                 <a href="#76">#76</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1530,9 +1550,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/76-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="75">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="75">
             <div class="post-header">
                 <a href="#75">#75</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1544,9 +1564,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/75-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="74">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="74">
             <div class="post-header">
                 <a href="#74">#74</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1558,9 +1578,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/74-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="73">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="73">
             <div class="post-header">
                 <a href="#73">#73</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1572,9 +1592,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/73-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="72">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="72">
             <div class="post-header">
                 <a href="#72">#72</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1586,9 +1606,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/72-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="71">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="71">
             <div class="post-header">
                 <a href="#71">#71</a>
                 <div class="post-meta">15-06-2025</div>
@@ -1604,9 +1624,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/71-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="70">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="70">
             <div class="post-header">
                 <a href="#70">#70</a>
                 <div class="post-meta">04-06-2025</div>
@@ -1618,9 +1638,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/70-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="69">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="69">
             <div class="post-header">
                 <a href="#69">#69</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1632,9 +1652,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/69-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="68">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="68">
             <div class="post-header">
                 <a href="#68">#68</a>
                 <div class="post-meta">01-06-2025</div>
@@ -1642,9 +1662,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Found my original hubs: <a href="https://www.aliexpress.com/item/1005004574404215.html">RC 02013 02014 02015 Plastic Steering Hub</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="67">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="67">
             <div class="post-header">
                 <a href="#67">#67</a>
                 <div class="post-meta">31-05-2025</div>
@@ -1652,9 +1672,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>To get a rough idea of the component layout I needed to figure out the battery first. For now I&#39;ve settled on a few models and will probably look at the Gens Ace Redline 4S, 5000mAh with a bullet connector. I don’t actually need such a big discharge current but it’s hard to find something smaller with similar capacity. <a href="https://hobbiesdirect.com.au/electronics/batteries/lipo/4s-c417?attributes%5B34%5D%5B0%5D=5.0mm+Bullet&attributes%5B142%5D%5B0%5D=min%3A5000">Gens Ace Redline 4S</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="66">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="66">
             <div class="post-header">
                 <a href="#66">#66</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1666,9 +1686,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/66-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="65">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="65">
             <div class="post-header">
                 <a href="#65">#65</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1681,9 +1701,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/65-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="64">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="64">
             <div class="post-header">
                 <a href="#64">#64</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1695,9 +1715,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/64-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="63">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="63">
             <div class="post-header">
                 <a href="#63">#63</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1705,9 +1725,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Another random thought — you can make the car drift using this. Never thought about it before but when you do it with your own hands you start realizing things that used to seem basic.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="62">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="62">
             <div class="post-header">
                 <a href="#62">#62</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1715,9 +1735,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Looks like I&#39;m starting to drift off and get distracted by things like this. It&#39;s not a bad thing but I probably need to finish the basic kinematics first and only then work on these fine details.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="61">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="61">
             <div class="post-header">
                 <a href="#61">#61</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1725,9 +1745,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>While I was looking for parts I thought, why do I need two motors in the back and why not just leave one and put in an axle or a differential. But then the idea came to slightly adjust the wheel speeds depending on how the steering turns. Basically the same as a differential but electronic. For example, when turning right, slow down the right motor a bit. It&#39;s trivial to implement, just need to choose a good function since it doesn&#39;t seem linear.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="60">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="60">
             <div class="post-header">
                 <a href="#60">#60</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1735,9 +1755,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>It would be great of course to redo the whole steering wheel and get rid of plastic completely</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="59">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="59">
             <div class="post-header">
                 <a href="#59">#59</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1749,9 +1769,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/59-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="58">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="58">
             <div class="post-header">
                 <a href="#58">#58</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1763,9 +1783,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/58-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="57">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="57">
             <div class="post-header">
                 <a href="#57">#57</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1773,9 +1793,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>It’s a bit annoying that the steering knuckle and steering linkage are plastic and flimsy. Especially the little arm in the steering linkage. I think I’ve already stripped its threads while taking apart the steering mechanism a few times when I was tuning and changing the servo. Decided to check what’s on AliExpress and discovered a whole new world.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="56">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="56">
             <div class="post-header">
                 <a href="#56">#56</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1783,9 +1803,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Oh yeah, before I forget I need to go to Bunnings and buy some kind of metal box for storing the lipo and line it with some fireproof material. Just to calm down my inner paranoid.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="55">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="55">
             <div class="post-header">
                 <a href="#55">#55</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1797,9 +1817,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/55-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="54">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="54">
             <div class="post-header">
                 <a href="#54">#54</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1811,9 +1831,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/54-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="53">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="53">
             <div class="post-header">
                 <a href="#53">#53</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1828,9 +1848,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/53-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="52">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="52">
             <div class="post-header">
                 <a href="#52">#52</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1847,9 +1867,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/52-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="51">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="51">
             <div class="post-header">
                 <a href="#51">#51</a>
                 <div class="post-meta">30-05-2025</div>
@@ -1867,9 +1887,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/51-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="50">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="50">
             <div class="post-header">
                 <a href="#50">#50</a>
                 <div class="post-meta">28-05-2025</div>
@@ -1877,9 +1897,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p><a href="https://www.reddit.com/r/robotics/comments/1bjjms0/3d_lidar/">3d_lidar</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="49">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="49">
             <div class="post-header">
                 <a href="#49">#49</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1891,9 +1911,9 @@ Perhaps iptables or your kernel needs to be upgraded.
 </ul>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="48">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="48">
             <div class="post-header">
                 <a href="#48">#48</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1901,9 +1921,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I still have a lot of free pins on the PCA9685 anyway.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="47">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="47">
             <div class="post-header">
                 <a href="#47">#47</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1911,9 +1931,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>The idea is to put it on 2 servos so you can control the view with a joystick stick. This is called a pan tilt servo kit.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="46">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="46">
             <div class="post-header">
                 <a href="#46">#46</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1921,9 +1941,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I found a CSI camera for rpi lying around that I bought for some project but never used. Tried to connect it and write a simple webrtc server to stream the feed to a browser on the device with the joystick. After 3 hours all I got so far is a green screen.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="45">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="45">
             <div class="post-header">
                 <a href="#45">#45</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1931,9 +1951,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Dualsense is a great gamepad but it doesn&#39;t have a screen which isn&#39;t very convenient. Looks like a decent candidate — Anbernic running Linux and launching a UI in the browser <a href="https://anbernic.com/products/anbernic-rg552">rg552</a></p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="44">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="44">
             <div class="post-header">
                 <a href="#44">#44</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1941,9 +1961,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Next week I&#39;ll try to move the project to ros2 but without their build system and project structure. I&#39;ll try to use docker and ros2 as a library.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="43">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="43">
             <div class="post-header">
                 <a href="#43">#43</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1951,9 +1971,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>The idea that the joystick sends events into the pipe and other nodes just subscribe to topics and react is beautiful.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="42">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="42">
             <div class="post-header">
                 <a href="#42">#42</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1961,9 +1981,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I&#39;m slowly starting to realize why ros2 looks a lot like microservices with pipes. In my script it&#39;s not very convenient that components depend on each other a lot and know everything about everyone.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="41">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="41">
             <div class="post-header">
                 <a href="#41">#41</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1971,9 +1991,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>There&#39;s also docker compose watch mode but I haven&#39;t figured it out yet, maybe I&#39;ll get back to it later</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="40">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="40">
             <div class="post-header">
                 <a href="#40">#40</a>
                 <div class="post-meta">25-05-2025</div>
@@ -1994,9 +2014,9 @@ Perhaps iptables or your kernel needs to be upgraded.
 </code></pre>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="39">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="39">
             <div class="post-header">
                 <a href="#39">#39</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2004,9 +2024,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I need to mount the PCBs using vertical/horizontal mounts on an acrylic or some other plate that I can easily drill holes in and attach other components to. This way the robot chassis won&#39;t get drilled or damaged if I need to redo something.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="38">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="38">
             <div class="post-header">
                 <a href="#38">#38</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2014,9 +2034,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>In theory, you can swap out the motors and put in bldc but you&#39;ll have to change the controller.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="37">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="37">
             <div class="post-header">
                 <a href="#37">#37</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2029,9 +2049,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/37-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="36">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="36">
             <div class="post-header">
                 <a href="#36">#36</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2044,19 +2064,23 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/36-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="35">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="35">
             <div class="post-header">
                 <a href="#35">#35</a>
                 <div class="post-meta">25-05-2025</div>
             </div>
             <div class="post-body"><p>For powering the LM2596 step down dc dc to 6V</p>
 </div>
-            
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="34">
+            <div class="post-media">
+        <a class="media-item" href="media/35-1.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="media/thumbnails/35-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="34">
             <div class="post-header">
                 <a href="#34">#34</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2064,9 +2088,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I&#39;ll control the servo with PWM, i2c and PCA9685</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="33">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="33">
             <div class="post-header">
                 <a href="#33">#33</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2074,9 +2098,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>The 1501MG servo I have is pretty cheap and noisy. I&#39;ll replace it when the new one arrives but for now this is what I&#39;ve got.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="32">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="32">
             <div class="post-header">
                 <a href="#32">#32</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2084,9 +2108,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Oh yeah, at first I started writing code right on the rpi through ssh but a lot of things didn’t work well in vscode so I decided to develop locally on my mac and sync files using mutagen. Pretty simple and cool tool. One more tool in the toolbox.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="31">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="31">
             <div class="post-header">
                 <a href="#31">#31</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2094,9 +2118,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Now it&#39;s time to deal with the servo and make it work with the sticks.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="30">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="30">
             <div class="post-header">
                 <a href="#30">#30</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2104,9 +2128,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>I added a 1-second timeout setting in roboclaw in 1C so the motors stop if the controller doesn&#39;t get commands for 1 second. This is needed to avoid sticking if the program suddenly crashes or if there&#39;s some kind of bug.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="29">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="29">
             <div class="post-header">
                 <a href="#29">#29</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2114,9 +2138,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>In the end I just got a Python script with 3 classes (rabbit, joy and roboclaw) and 2 threads with loops (one listens to the joystick and updates the state, the other sends commands in an endless loop to roboclaw over UART)</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="28">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="28">
             <div class="post-header">
                 <a href="#28">#28</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2124,9 +2148,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>When I connected everything the robot went backwards instead of forwards but you can fix it by just multiplying by -1 or swapping the wires.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="27">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="27">
             <div class="post-header">
                 <a href="#27">#27</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2134,9 +2158,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>Connecting the controller turned out to be easy and everything worked the first time. I’m thinking of making the R2 trigger control forward movement. The value range from 0 to 255 can be normalized to roboclaw’s range (-32767, 32767) with a simple formula.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="26">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="26">
             <div class="post-header">
                 <a href="#26">#26</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2144,9 +2168,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>For now, I decided not to bother with bluetooth for controlling it through the PS5 dualsense, especially since the final goal is control over the internet, not bluetooth.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="25">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="25">
             <div class="post-header">
                 <a href="#25">#25</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2154,9 +2178,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <div class="post-body"><p>It&#39;s actually interesting to remember everything I went through at school, university and heard from my dad and use it in the real world.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="24">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="24">
             <div class="post-header">
                 <a href="#24">#24</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2172,9 +2196,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/24-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="23">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="23">
             <div class="post-header">
                 <a href="#23">#23</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2187,9 +2211,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/23-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="22">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="22">
             <div class="post-header">
                 <a href="#22">#22</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2201,9 +2225,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/22-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="21">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="21">
             <div class="post-header">
                 <a href="#21">#21</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2215,9 +2239,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/21-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="20">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="20">
             <div class="post-header">
                 <a href="#20">#20</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2230,9 +2254,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/20-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="19">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="19">
             <div class="post-header">
                 <a href="#19">#19</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2248,9 +2272,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/19-2.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="18">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="18">
             <div class="post-header">
                 <a href="#18">#18</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2262,9 +2286,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/18-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="17">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="17">
             <div class="post-header">
                 <a href="#17">#17</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2276,9 +2300,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/17-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="16">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="16">
             <div class="post-header">
                 <a href="#16">#16</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2298,9 +2322,9 @@ Perhaps iptables or your kernel needs to be upgraded.
             <img src="media/thumbnails/16-3.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="15">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="15">
             <div class="post-header">
                 <a href="#15">#15</a>
                 <div class="post-meta">25-05-2025</div>
@@ -2317,9 +2341,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <img src="media/thumbnails/15-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="14">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="14">
             <div class="post-header">
                 <a href="#14">#14</a>
                 <div class="post-meta">24-05-2025</div>
@@ -2331,9 +2355,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <img src="media/thumbnails/14-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="13">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="13">
             <div class="post-header">
                 <a href="#13">#13</a>
                 <div class="post-meta">24-05-2025</div>
@@ -2341,9 +2365,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>For now I&#39;m thinking to stick with the prototype board and put everything together on it. At least the layout will be clear and it&#39;ll be a bit easier to spread everything out later.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="12">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="12">
             <div class="post-header">
                 <a href="#12">#12</a>
                 <div class="post-meta">24-05-2025</div>
@@ -2351,9 +2375,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>Started thinking about a custom PCB and dusting off the laser iron. Spent some time with <a href="https://www.kicad.org/">KiCad</a> and realized it&#39;s too early - there are still too many things I don&#39;t understand. I&#39;ll put it off until <a href="https://modelcontextprotocol.io/">MCP</a> comes out for PCB-CAD or I finally figure things out. Maybe one day Claude will learn to design boards.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="11">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="11">
             <div class="post-header">
                 <a href="#11">#11</a>
                 <div class="post-meta">22-05-2025</div>
@@ -2366,9 +2390,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <img src="media/thumbnails/11-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="10">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="10">
             <div class="post-header">
                 <a href="#10">#10</a>
                 <div class="post-meta">22-05-2025</div>
@@ -2376,9 +2400,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>For now everything is of course held together with wires and mounted on a breadboard – I probably need to solder all this onto a proper PCB with real traces instead of wires. But first I need to make it actually move. One step at a time!</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="9">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="9">
             <div class="post-header">
                 <a href="#9">#9</a>
                 <div class="post-meta">22-05-2025</div>
@@ -2386,9 +2410,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>In the end I&#39;ll order a <a href="https://www.ti.com/product/TXS0108E">TXS0108E</a> or just quickly throw together a voltage divider on resistors but I need to go to <a href="https://www.jaycar.com.au/">Jaycar</a> for resistors.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="8">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="8">
             <div class="post-header">
                 <a href="#8">#8</a>
                 <div class="post-meta">22-05-2025</div>
@@ -2396,9 +2420,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>The problem was that I stupidly bought a <a href="https://www.ti.com/product/TXB0104">TXB0104</a>, thinking that this level shifter would work with UART and let me connect RX on the RoboClaw (which runs at 5V), but it didn&#39;t work. I disconnected it and just left TX 3.3V from the Raspberry Pi.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="7">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="7">
             <div class="post-header">
                 <a href="#7">#7</a>
                 <div class="post-meta">22-05-2025</div>
@@ -2411,9 +2435,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <img src="media/thumbnails/7-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="6">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="6">
             <div class="post-header">
                 <a href="#6">#6</a>
                 <div class="post-meta">21-05-2025</div>
@@ -2421,9 +2445,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p><a href="https://www.basicmicro.com/RoboClaw-2x30A-Motor-Controller_p_9.html">RoboClaw</a> doesn&#39;t stop if your script crashes - that&#39;s dangerous! You definitely need to enable RC timeout and send commands in a loop.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="5">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="5">
             <div class="post-header">
                 <a href="#5">#5</a>
                 <div class="post-meta">18-05-2025</div>
@@ -2431,9 +2455,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>I found out there are 2 ways to work with <a href="https://www.playstation.com/en-us/accessories/dualsense-wireless-controller/">DualSense</a> from the browser: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API">Gamepad API</a> (standard but limited) and <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API">WebHID API</a> (full access to all features).</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="4">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="4">
             <div class="post-header">
                 <a href="#4">#4</a>
                 <div class="post-meta">18-05-2025</div>
@@ -2441,9 +2465,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>Turns out Raspberry Pi has just one PWM output, which is OK for tests but I still ordered the <a href="https://www.adafruit.com/product/815">16-channel PWM driver PCA9685</a> just in case I decide to add another servo. Better to overdo it than hack together some ugly workaround later.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="3">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="3">
             <div class="post-header">
                 <a href="#3">#3</a>
                 <div class="post-meta">18-05-2025</div>
@@ -2451,9 +2475,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>I was planning to run the steering servo today and try to turn it with the <a href="https://www.raspberrypi.org/">Raspberry Pi</a>, but Amazon didn&#39;t deliver the solder so I&#39;ll have to wait to do any soldering.</p>
 </div>
             
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="2">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="2">
             <div class="post-header">
                 <a href="#2">#2</a>
                 <div class="post-meta">18-05-2025</div>
@@ -2465,9 +2489,9 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <img src="media/thumbnails/1-1.webp" alt="Preview" loading="lazy" decoding="async" />
         </a>
     </div>
-        </div>
-    <div class="divider">---</div>
-        <div class="post" id="1">
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="1">
             <div class="post-header">
                 <a href="#1">#1</a>
                 <div class="post-meta">18-05-2025</div>
@@ -2475,8 +2499,10 @@ May 25 01:36:41 rabbit kernel: hwmon hwmon2: Voltage normalised
             <div class="post-body"><p>Decided to dust off my soldering skills a bit and mix that with what I’ve learned working as a full-stack dev. I want to build a robot that can be controlled over the internet and uses <a href="https://en.wikipedia.org/wiki/Ackermann_steering_geometry">Ackermann steering</a>. The second step is to dive deeper into <a href="https://github.com/ros2/ros2">ROS2</a> and autonomous navigation.</p>
 </div>
             
-        </div>
+        </article>
     </div>
+
+                    <footer><a href="https://www.linkedin.com/in/seralexeev">Sergey Alekseev</a></footer>
                 </div>
             </body>
         </html>

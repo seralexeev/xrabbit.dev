@@ -346,6 +346,8 @@ I'll control the servo with PWM, i2c and PCA9685
 ```yaml
 id: 35
 date: 25-05-2025
+media:
+  - 35-1.jpg
 ```
 
 For powering the LM2596 step down dc dc to 6V
@@ -1211,6 +1213,8 @@ I want 4 of these sensors. One between the robot and the battery and 3 others af
 ```yaml
 id: 113
 date: 29-06-2025
+media:
+  - 113-1.jpg
 ```
 
 At the same time, the steering servo is connected through PCA9685 and directly to the jetson pins. But I don't really want to solder a bunch of wires so I bought an i2c expansion board. It's convenient, I'll add more i2c too. Plus, the ground pin header turned out to be super handy for tying all the GNDs together on all the boards.
@@ -1368,6 +1372,8 @@ From other updates I finally got the 5G gateway. Already took it apart – it's 
 ```yaml
 id: 125
 date: 16-07-2025
+media:
+  - 125-1.jpg
 ```
 
 It’s so annoying how badly nvidia tests jetpack. Yesterday I finally broke my jetson and decided to reflash it from scratch. After an hour the fresh jetpack couldn’t launch chrome or any other browser. After a couple hours chatting with chat gpt and claude, all I got was installing chrome from flatpak.

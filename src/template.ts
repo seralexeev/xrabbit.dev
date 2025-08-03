@@ -44,14 +44,14 @@ const Post = async ({ meta, content }: { meta: PostMeta; content: string }) => {
     };
 
     return html`
-        <div class="post" id="${meta.id}">
+        <article class="post" id="${meta.id}">
             <div class="post-header">
                 <a href="#${meta.id}">#${meta.id}</a>
                 <div class="post-meta">${meta.date}</div>
             </div>
             <div class="post-body">${content}</div>
             ${await media()}
-        </div>
+        </article>
     `;
 };
 
@@ -62,7 +62,7 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
         rendered_posts.push(await Post({ meta: post.meta, content }));
     }
 
-    const divider = html`<div class="divider">---</div>`;
+    const divider = html`<div class="divider">...</div>`;
 
     return html`
         <!DOCTYPE html>
@@ -154,12 +154,21 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                     }
 
                     header {
-                        margin-bottom: 20px;
+                        margin-bottom: 48px;
+                    }
+
+                    footer {
+                        margin: 48px 0;
+                        text-align: center;
+                        font-size: 14px;
                     }
 
                     h1 {
                         font-size: 24px;
                         font-weight: normal;
+                        background: var(--color-black);
+                        color: var(--color-green);
+                        margin-top: 2px;
                     }
 
                     header img {
@@ -204,6 +213,8 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                         width: 100%;
                         overflow: hidden;
                         position: relative;
+                        max-height: 512px;
+                        border-radius: 4px;
                     }
 
                     .media-item img,
@@ -286,8 +297,9 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
 
                     .translated {
                         color: var(--color-gray);
-                        font-style: italic;
                         font-size: 12px;
+                        text-align: right;
+                        margin-top: 4px;
                     }
                 </style>
             </head>
@@ -296,10 +308,12 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                     <header>
                         <img alt="Robot Rabbit" src="./media/logo.gif" />
                         <h1>Robot Rabbit</h1>
-                        <span class="translated">(translated from Russian via ChatGPT)</span>
+                        <div class="translated">translated from Russian via ChatGPT</div>
                     </header>
 
                     <div class="post-list">${rendered_posts.join(divider)}</div>
+
+                    <footer><a href="https://www.linkedin.com/in/seralexeev">Sergey Alekseev</a></footer>
                 </div>
             </body>
         </html>

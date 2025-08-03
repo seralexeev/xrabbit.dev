@@ -16,6 +16,8 @@ export const PostMeta = z.object({
 
 export const ensure_thumbnail = async (media: path.ParsedPath) => {
     const media_path = path.join(root, 'static/media', media.base);
+    await fs.access(media_path, fs.constants.F_OK);
+
     const preview_path = path.join(root, 'static/media/thumbnails', `${media.name}.webp`);
     const preview_exists = await fs.access(preview_path, fs.constants.F_OK).then(
         () => true,

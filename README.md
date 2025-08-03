@@ -1721,7 +1721,7 @@ id: 154
 date: 22-07-2025
 ```
 
-measure depth only from 30cm. This creates a blind spot in front of the robot. Tolerable but not very nice. Maybe it's worth thinking about lidar or a proximity sensor for obstacle avoidance.
+Because the baseline of the stereo pair is pretty wide it can only measure depth from 30 cm. This creates a blind spot in front of the robot. Tolerable but not very nice. Maybe it's worth thinking about a lidar or a proximity sensor for obstacle avoidance.
 
 ---
 

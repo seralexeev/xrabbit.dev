@@ -98,10 +98,6 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                 <meta name="twitter:image" content="https://xrabbit.dev/media/logo.gif" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
-                    rel="stylesheet"
-                />
 
                 <style>
                     :root {
@@ -316,6 +312,10 @@ export const Blog = async ({ posts }: { posts: Array<{ meta: PostMeta; content: 
                     <footer><a href="https://www.linkedin.com/in/seralexeev">Sergey Alekseev</a></footer>
                 </div>
             </body>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+                rel="stylesheet"
+            />
         </html>
     `;
 };

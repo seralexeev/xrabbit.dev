@@ -247,12 +247,27 @@
                     </header>
 
                     <div class="post-list">
+        <article class="post" id="159">
+            <div class="post-header">
+                <a href="#159">#159</a>
+                <div class="post-meta">09-08-2025</div>
+            </div>
+            <div class="post-body"><p>Spatial mapping + three.js</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/159-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/159-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
         <article class="post" id="158">
             <div class="post-header">
                 <a href="#158">#158</a>
-                <div class="post-meta">22-07-2025</div>
+                <div class="post-meta">08-08-2025</div>
             </div>
-            <div class="post-body"><p>Spatial mapping + three.js</p>
+            <div class="post-body"><p>More and more I’m using NATS in the project. Threw together a simple UI to control camera settings from the UI. For this I decided to step away a bit from the idea of using pub sub for everything and take a look at jetstream. By default NATS core doesn’t have persistence but you can turn it on by enabling jetstream. Basically it’s just one flag and now you get a persistent KV store, object store and some delivery guarantees. All of this is super useful and really easy to use. For example camera settings are just a KV. Both the client and the robot subscribe to this key (in jetstream everything’s still just subjects) and can react to changes, both of them can also change the value and all clients instantly react to it and after restart the state is restored.</p>
 </div>
             <div class="post-media">
         <a class="media-item" href="media/158-1.mp4" target="_blank" rel="noopener noreferrer">
@@ -265,24 +280,28 @@
         <article class="post" id="157">
             <div class="post-header">
                 <a href="#157">#157</a>
-                <div class="post-meta">22-07-2025</div>
+                <div class="post-meta">30-07-2025</div>
             </div>
-            <div class="post-body"><p>More and more I&#39;m using NATS in the project. Threw together a simple UI to control camera settings through the UI. For this I decided to step away from the idea of using pub sub for everything and check out jetstream. By default NATS core doesn&#39;t have persistence but you can turn it on by enabling jetstream. Basically it&#39;s just one flag and now you get a persistent KV store, object store and some delivery guarantees. All of this is really useful and super convenient to use. For example camera settings are just a KV. Both client and robot are subscribed to this key (in jetstream everything is still subjects) and can react to changes, both of them can also update the value and all clients instantly react to it, and after reboot the state is restored.</p>
+            <div class="post-body"><p>Decided to quickly throw together a blog in English, just to have one. I&#39;ll copy everything from <a href="https://t.me/s/robotrabbit0">robotrabbit0</a> here. <a href="https://xrabbit.dev">https://xrabbit.dev</a></p>
 </div>
-            <div class="post-media">
-        <a class="media-item" href="media/157-1.mp4" target="_blank" rel="noopener noreferrer">
-            <div class="video-overlay">Click to Play</div>
-            <img src="media/thumbnails/157-1.webp" alt="Preview" loading="lazy" decoding="async" />
-        </a>
-    </div>
+            
         </article>
     <div class="divider">...</div>
         <article class="post" id="156">
             <div class="post-header">
                 <a href="#156">#156</a>
-                <div class="post-meta">22-07-2025</div>
+                <div class="post-meta">08-08-2025</div>
             </div>
-            <div class="post-body"><p>Decided to quickly throw together a blog in English just to have one. I&#39;ll repost all the posts from here there. <a href="https://xrabbit.dev">https://xrabbit.dev</a></p>
+            <div class="post-body"><p>I haven&#39;t written anything for a while but that doesn&#39;t mean I wasn&#39;t doing stuff. While I was in Byron Bay I didn’t have the robot around so I worked on a content generator for the blog.</p>
+<ul>
+<li>All posts from Telegram go into a markdown file, with metadata for each post.</li>
+<li>Every post gets translated through the ChatGPT API</li>
+<li>All images get compressed to webp</li>
+<li>A preview is generated for every video using ffmpeg and it also gets compressed to webp</li>
+<li>Wanted to do it all without any javascript at all</li>
+<li>Deployed on cloudflare.</li>
+<li>Source code is here <a href="https://github.com/seralexeev/xrabbit.dev">xrabbit.dev</a></li>
+</ul>
 </div>
             
         </article>

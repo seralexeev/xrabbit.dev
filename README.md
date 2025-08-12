@@ -1746,3 +1746,25 @@ date: 22-07-2025
 ```
 
 Decided to quickly throw together a blog in English just to have one. I'll repost all the posts from here there. [https://xrabbit.dev](https://xrabbit.dev)
+
+---
+
+```yaml
+id: 157
+date: 22-07-2025
+media:
+  - 157-1.mp4
+```
+
+More and more I'm using NATS in the project. Threw together a simple UI to control camera settings through the UI. For this I decided to step away from the idea of using pub sub for everything and check out jetstream. By default NATS core doesn't have persistence but you can turn it on by enabling jetstream. Basically it's just one flag and now you get a persistent KV store, object store and some delivery guarantees. All of this is really useful and super convenient to use. For example camera settings are just a KV. Both client and robot are subscribed to this key (in jetstream everything is still subjects) and can react to changes, both of them can also update the value and all clients instantly react to it, and after reboot the state is restored.
+
+---
+
+```yaml
+id: 158
+date: 22-07-2025
+media:
+  - 158-1.mp4
+```
+
+Spatial mapping + three.js

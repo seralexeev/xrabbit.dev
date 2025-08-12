@@ -247,6 +247,36 @@
                     </header>
 
                     <div class="post-list">
+        <article class="post" id="158">
+            <div class="post-header">
+                <a href="#158">#158</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Spatial mapping + three.js</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/158-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/158-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="157">
+            <div class="post-header">
+                <a href="#157">#157</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Все больше и больше использую NATS в проекте. Накидал простенький UI для управлением настройками камеры через UI. Для этого решил немного отойти от идеи использовать pub sub для всего и посмотреть в сторону jetstream. По дефолту NATS core не имеет персистентности но это можно включить включив jetstream. По сути это один флаг и у тебя появлятся персистентный KV стор, object store и некоторые гарантии доставки. Все это очень полезно и очень удобно использовать. Например настройки камеры это просто KV. И клиент и робот подписаны на этот ключ (все в jetstream это те же subjects) и могут реагировать на изменение, оба они могет так же менять значение и все клиенты мнговенно на них реагируют, а после перезагрузки состояние восстанавливается.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/157-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/157-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
         <article class="post" id="156">
             <div class="post-header">
                 <a href="#156">#156</a>

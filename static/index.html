@@ -247,6 +247,36 @@
                     </header>
 
                     <div class="post-list">
+        <article class="post" id="158">
+            <div class="post-header">
+                <a href="#158">#158</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>Spatial mapping + three.js</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/158-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/158-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="157">
+            <div class="post-header">
+                <a href="#157">#157</a>
+                <div class="post-meta">22-07-2025</div>
+            </div>
+            <div class="post-body"><p>More and more I&#39;m using NATS in the project. Threw together a simple UI to control camera settings through the UI. For this I decided to step away from the idea of using pub sub for everything and check out jetstream. By default NATS core doesn&#39;t have persistence but you can turn it on by enabling jetstream. Basically it&#39;s just one flag and now you get a persistent KV store, object store and some delivery guarantees. All of this is really useful and super convenient to use. For example camera settings are just a KV. Both client and robot are subscribed to this key (in jetstream everything is still subjects) and can react to changes, both of them can also update the value and all clients instantly react to it, and after reboot the state is restored.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/157-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/157-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
         <article class="post" id="156">
             <div class="post-header">
                 <a href="#156">#156</a>

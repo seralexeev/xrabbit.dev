@@ -1785,3 +1785,38 @@ media:
 ```
 
 Spatial mapping + three.js
+
+---
+
+```yaml
+id: 160
+date: 16-08-2025
+```
+
+Built nvblox on jetson. There's no ready torch package so I had to build it myself. It crashed three times for different reasons, in the end enabling swap helped since jetson doesn't have enough memory to build the package. Building C++ with cuda and python is also painful, even with a docker container where you can build everything, it's not hermetic, it falls apart.
+
+Then I struggled with a minimal dockerfile. I managed to run the tests, but the docker image is huge with a ton of dev dependencies I don't understand so I wanted to get the bare minimum runtime. In the end, after a few days of cleanup, I built a compact image with binaries and python bindings.
+
+---
+
+```yaml
+id: 161
+date: 16-08-2025
+media:
+  - 161-1.mp4
+```
+
+The next step was hooking up the vision pipeline to the robot. At first, I thought about writing the depth map and frames into a shared file but NATS easily handles a low-res stream. So in the end the camera sends rgb + depth to a topic and the nvblox node subscribes to them. For high resolution I’ll have to figure something else out but for now, it works. The camera intrinsics and pose get updated in the kv store instead of just sending them as messages to topics, which turned out to be much more convenient (even though under the hood it’s basically the same thing)
+
+nvblox takes the depth and position and builds the tsdf (distance field to the surface) on the GPU in real time. It smoothes out noise, merges a lot of frames and gives you a map with free and occupied areas. From this you can get a voxel map just like a Minecraft world.
+
+---
+
+```yaml
+id: 162
+date: 16-08-2025
+```
+
+Next, you can build graphs based on this map. Nodes are voxels with weights, knowing the cost you can use it for route planning, avoiding expensive sections, for example so the robot doesn't get too close to walls or crash into them. Then dijkstra or a* and the robot can search for a path from its position to the goal using pure pursuit.
+
+Right now it's super rough and not accurate, needs calibration and bugfixing. But the fact that the e2e pipeline already works at all is awesome, even though it took so much pain and time and I've probably only moved like 5% towards the goal of implementing local navigation.

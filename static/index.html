@@ -247,6 +247,44 @@
                     </header>
 
                     <div class="post-list">
+        <article class="post" id="162">
+            <div class="post-header">
+                <a href="#162">#162</a>
+                <div class="post-meta">16-08-2025</div>
+            </div>
+            <div class="post-body"><p>Next, you can build graphs based on this map. Nodes are voxels with weights, knowing the cost you can use it for route planning, avoiding expensive sections, for example so the robot doesn&#39;t get too close to walls or crash into them. Then dijkstra or a* and the robot can search for a path from its position to the goal using pure pursuit.</p>
+<p>Right now it&#39;s super rough and not accurate, needs calibration and bugfixing. But the fact that the e2e pipeline already works at all is awesome, even though it took so much pain and time and I&#39;ve probably only moved like 5% towards the goal of implementing local navigation.</p>
+</div>
+            
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="161">
+            <div class="post-header">
+                <a href="#161">#161</a>
+                <div class="post-meta">16-08-2025</div>
+            </div>
+            <div class="post-body"><p>The next step was hooking up the vision pipeline to the robot. At first, I thought about writing the depth map and frames into a shared file but NATS easily handles a low-res stream. So in the end the camera sends rgb + depth to a topic and the nvblox node subscribes to them. For high resolution I’ll have to figure something else out but for now, it works. The camera intrinsics and pose get updated in the kv store instead of just sending them as messages to topics, which turned out to be much more convenient (even though under the hood it’s basically the same thing)</p>
+<p>nvblox takes the depth and position and builds the tsdf (distance field to the surface) on the GPU in real time. It smoothes out noise, merges a lot of frames and gives you a map with free and occupied areas. From this you can get a voxel map just like a Minecraft world.</p>
+</div>
+            <div class="post-media">
+        <a class="media-item" href="media/161-1.mp4" target="_blank" rel="noopener noreferrer">
+            <div class="video-overlay">Click to Play</div>
+            <img src="media/thumbnails/161-1.webp" alt="Preview" loading="lazy" decoding="async" />
+        </a>
+    </div>
+        </article>
+    <div class="divider">...</div>
+        <article class="post" id="160">
+            <div class="post-header">
+                <a href="#160">#160</a>
+                <div class="post-meta">16-08-2025</div>
+            </div>
+            <div class="post-body"><p>Built nvblox on jetson. There&#39;s no ready torch package so I had to build it myself. It crashed three times for different reasons, in the end enabling swap helped since jetson doesn&#39;t have enough memory to build the package. Building C++ with cuda and python is also painful, even with a docker container where you can build everything, it&#39;s not hermetic, it falls apart.</p>
+<p>Then I struggled with a minimal dockerfile. I managed to run the tests, but the docker image is huge with a ton of dev dependencies I don&#39;t understand so I wanted to get the bare minimum runtime. In the end, after a few days of cleanup, I built a compact image with binaries and python bindings.</p>
+</div>
+            
+        </article>
+    <div class="divider">...</div>
         <article class="post" id="159">
             <div class="post-header">
                 <a href="#159">#159</a>
